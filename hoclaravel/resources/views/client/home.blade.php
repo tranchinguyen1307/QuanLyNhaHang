@@ -1,50 +1,47 @@
-        <!-- Header Start -->
-        @include('client.layouts.header')
-        <!-- Header End -->
+     @extends('client.layouts.main')
 
-        <!-- Navbar & Hero Start -->
-        @include('client.layouts.navbar')
-        <!-- Navbar & Hero End -->
+     @section('title', 'Nhà hàng NMN ')
+     @section('content')
 
+         <!-- Header Start -->
+         <!-- Header End -->
 
-        <!-- Service Start -->
-        @include('client.layouts.service')
-        <!-- Service End -->
+         <!-- Navbar & Hero Start -->
+         <!-- Navbar & Hero End -->
 
-
-        <!-- About Start -->
-        @include('client.layouts.about')
-        <!-- About End -->
+         <!-- Service Start -->
+         @include('client.layouts.service')
+         <!-- Service End -->
 
 
-        <!-- Menu Start -->
-        @include('client.layouts.menu')
-        <!-- Menu End -->
+         <!-- About Start -->
+         @include('client.layouts.about')
+         <!-- About End -->
 
 
-        <!-- Reservation Start -->
-        @include('client.layouts.reservation')
-        <!-- Reservation Start -->
+         <!-- Menu Start -->
+         @include('client.layouts.menu')
+         <!-- Menu End -->
 
 
-        <!-- manager Start -->
-        @include('client.layouts.manager')
-        <!-- manager End -->
+         <!-- Reservation Start -->
+         @include('client.layouts.reservation')
+         <!-- Reservation Start -->
 
 
-        <!-- comment Start -->
-        @include('client.layouts.comment')
-        <!-- comment End -->
+         <!-- manager Start -->
+         @include('client.layouts.manager')
+         <!-- manager End -->
 
 
-        <!-- company-info Start -->
-        @include('client.layouts.company-info')
-
-        <!-- company-info End -->
-
-        @include('client.layouts.footer')
+         <!-- comment Start -->
+         @include('client.layouts.comment')
+         <!-- comment End -->
 
 
-        </body>
+         <!-- company-info Start -->
 
-        </html>
+
+         <!-- company-info End -->
+
+     @endsection
