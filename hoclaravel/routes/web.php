@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\MenuController as MenuHomeController;
 use App\Http\Controllers\Admin\TableController as TableHomeController;
 use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
+use App\Http\Controllers\Admin\CustomersController as CustomerHomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,3 +25,7 @@ Route::get('/table/edit', [TableHomeController::class, 'edit'])->name('table.edi
 Route::get('/employees', [EmployeesHomeController::class, 'index'])->name('employees');
 Route::get('/employees/create', [EmployeesHomeController::class, 'create'])->name('employees.create');
 Route::get('/employees/edit', [EmployeesHomeController::class, 'edit'])->name('employees.edit');
+
+Route::get('/customer', [CustomerHomeController::class, 'index'])->name('customer');
+Route::get('/customer/create', [CustomerHomeController::class, 'create'])->name('customer.create');
+Route::get('/customer/edit', [CustomerHomeController::class, 'edit'])->name('customer.edit');
