@@ -90,15 +90,15 @@
                                 <p>Thêm</p>
                             </a>
                         </li>
-<<<<<<< HEAD
-                    </ul>
-                </li>
-
-=======
 
                     </ul>
                 </li>
->>>>>>> f24cd02 (fix-admin)
+
+
+
+                    </ul>
+                </li>
+
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
