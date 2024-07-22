@@ -93,13 +93,9 @@
 
                     </ul>
                 </li>
-
-                    </ul>
-                </li>
-
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
+                        <i class="nav-icon fas fa-table"></i>
                         <p>
                             Đặt Bàn
                             <i class="right fas fa-angle-left"></i>
@@ -120,10 +116,9 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Nhân viên
                             <i class="right fas fa-angle-left"></i>
@@ -144,10 +139,9 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Khách hàng
                             <i class="right fas fa-angle-left"></i>
@@ -168,7 +162,8 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+
+                    </ul>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
