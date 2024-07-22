@@ -90,7 +90,13 @@
                                 <p>Thêm</p>
                             </a>
                         </li>
-<<<<<<< HEAD
+
+
+
+                    </ul>
+                </li>
+
+
 
                     </ul>
                 </li>
@@ -100,26 +106,15 @@
                     </ul>
                 </li>
 
-=======
-<<<<<<< HEAD
-                    </ul>
-                </li>
-<<<<<<< HEAD
 
-=======
+
 
                     </ul>
                 </li>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f24cd02 (fix-admin)
-=======
->>>>>>> f24cd02 (fix-admin)
-=======
->>>>>>> f24cd02 (fix-admin)
-=======
->>>>>>> f24cd02 (fix-admin)
->>>>>>> 8e77399ce3df09d1b780d1d0d40ac2f34c9647a6
+
+
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
