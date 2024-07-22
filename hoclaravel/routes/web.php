@@ -25,7 +25,6 @@ Route::get('/menu/edit', [AdminHomeController::class, 'edit'])->name('menu.edit'
 Route::get('/trang-chu', [ClientHomeController::class, 'index'])->name('/trang-chu');
 Route::get('/san-pham', [ProductController::class, 'index'])->name('/san-pham');
 Route::get('/dat-ban', [ClientBookTableController::class, 'index'])->name('/dat-ban');
-// Route::get('/danh-muc', [categories::class, 'render']);
 
 
 Route::get('/table', [TableHomeController::class, 'index'])->name('table');
