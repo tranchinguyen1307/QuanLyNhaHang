@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class CustomersController extends Controller
+class CustomerController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.customer');
+        return view('admin.pages.user');
     }
     public function create()
     {

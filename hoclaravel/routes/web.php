@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\MenuController as MenuHomeController;
 use App\Http\Controllers\Admin\TableController as TableHomeController;
 use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
-use App\Http\Controllers\Admin\CustomersController as CustomerHomeController;
+use App\Http\Controllers\Admin\CustomerController as CustomerHomeController;
 
 Route::get('/', function () {
     return view('welcome');
