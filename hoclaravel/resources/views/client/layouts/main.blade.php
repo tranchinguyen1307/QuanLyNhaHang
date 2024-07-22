@@ -51,8 +51,9 @@
 
                     <a href="{{ route('/san-pham') }}" class="nav-item nav-link">Thực Đơn</a>
                     <a href="{{ route('/lien-he') }}" class="nav-item nav-link">Liên Hệ</a>
+                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt bàn</a>
                 </div>
-                <a href="{{ route('/dat-ban') }}" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
+                <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
             </div>
         </nav>
 
