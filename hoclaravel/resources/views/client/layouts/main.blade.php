@@ -59,6 +59,10 @@
                     <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
                 </div>
                 <a href="" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
+                    <a href="{{ route('/lien-he') }}" class="nav-item nav-link">Liên Hệ</a>
+                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt bàn</a>
+                </div>
+                <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
             </div>
         </nav>
 

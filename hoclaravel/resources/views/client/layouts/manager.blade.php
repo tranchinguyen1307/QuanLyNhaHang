@@ -9,6 +9,7 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('clients/img/team-1.jpg')}}" alt="Thành viên 1">
                     </div>
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
@@ -26,6 +27,7 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('clients/img/team-2.jpg')}}" alt="Thành viên 2">
                     </div>
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
@@ -42,7 +44,11 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
                         <img class="img-fluid" src="img/team-3.jpg" alt="">
+=======
+                        <img class="img-fluid" src="{{asset('clients/img/team-3.jpg')}}" alt="Thành viên 3">
+>>>>>>> bca95e1 (chỉnh sửa đường dẫn hình ảnh)
                     </div>
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
@@ -59,7 +65,11 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
                         <img class="img-fluid" src="img/team-4.jpg" alt="">
+=======
+                        <img class="img-fluid" src="{{asset('clients/img/team-4.jpg')}}" alt="Thành viên 4">
+>>>>>>> bca95e1 (chỉnh sửa đường dẫn hình ảnh)
                     </div>
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>

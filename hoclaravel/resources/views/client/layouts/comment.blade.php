@@ -12,6 +12,8 @@
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
                         style="width: 50px; height: 50px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-1.jpg')}}"
+                        style="width: 50px; height: 50px;" alt="Khách hàng 1">
                     <div class="ps-3">
                         <h5 class="mb-1">Client Name</h5>
                         <small>Profession</small>
@@ -25,6 +27,8 @@
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
                         style="width: 50px; height: 50px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-2.jpg')}}"
+                        style="width: 50px; height: 50px;" alt="Khách hàng 2">
                     <div class="ps-3">
                         <h5 class="mb-1">Client Name</h5>
                         <small>Profession</small>
@@ -38,6 +42,8 @@
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 50px; height: 50px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-3.jpg')}}"
+                        style="width: 50px; height: 50px;" alt="Khách hàng 3">
                     <div class="ps-3">
                         <h5 class="mb-1">Client Name</h5>
                         <small>Profession</small>
@@ -51,6 +57,8 @@
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
                         style="width: 50px; height: 50px;">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-4.jpg')}}"
+                        style="width: 50px; height: 50px;" alt="Khách hàng 4">
                     <div class="ps-3">
                         <h5 class="mb-1">Client Name</h5>
                         <small>Profession</small>
