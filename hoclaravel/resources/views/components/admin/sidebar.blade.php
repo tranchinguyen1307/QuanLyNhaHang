@@ -93,11 +93,14 @@
 <<<<<<< HEAD
                     </ul>
                 </li>
+<<<<<<< HEAD
 
 =======
 
                     </ul>
                 </li>
+>>>>>>> f24cd02 (fix-admin)
+=======
 >>>>>>> f24cd02 (fix-admin)
                 <li class="nav-item">
                     <a href="" class="nav-link">

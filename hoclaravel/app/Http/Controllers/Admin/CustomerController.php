@@ -10,7 +10,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.user');
+        return view('admin.pages.customers');
     }
     public function create()
     {
