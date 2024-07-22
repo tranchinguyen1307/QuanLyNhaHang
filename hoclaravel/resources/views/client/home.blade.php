@@ -19,16 +19,7 @@
          <!-- About End -->
 
 
-         <!-- Menu Start -->
-         @include('client.layouts.menu')
-         <!-- Menu End -->
-
-
-         <!-- Reservation Start -->
-         @include('client.layouts.reservation')
-         <!-- Reservation Start -->
-
-
+    
          <!-- manager Start -->
          @include('client.layouts.manager')
          <!-- manager End -->

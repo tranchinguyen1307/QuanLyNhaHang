@@ -8,7 +8,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{asset('clients/img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
                 <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Nhà hàng</h1>
-                <img src="img/logo.png" alt="Logo">
+              
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -50,14 +50,12 @@
                     <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
                     <a href="service.html" class="nav-item nav-link">Dịch Vụ</a>
                     <a href="{{ route('/san-pham') }}" class="nav-item nav-link">Thực Đơn</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trang</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="booking.html" class="dropdown-item">Đặt Bàn</a>
-                            <a href="team.html" class="dropdown-item">Đội Ngũ</a>
-                            <a href="testimonial.html" class="dropdown-item">Khách Hàng</a>
-                        </div>
-                    </div>
+
+                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt Bàn</a>
+                    <a href="team.html" class="nav-item nav-link">Đội Ngũ</a>
+                    <a href="testimonial.html" class="nav-item nav-link">Khách Hàng</a>
+
+
                     <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
                 </div>
                 <a href="" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
