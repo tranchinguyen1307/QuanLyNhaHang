@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
-  {{-- <link rel="stylesheet" href="/public/assets/plugins/summernote/summernote-bs4.min.css"> --}}
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('path/to/your/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
-
