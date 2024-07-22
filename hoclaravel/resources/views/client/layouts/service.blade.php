@@ -5,8 +5,8 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                        <h5>Master Chefs</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        <h5>Đầu Bếp Chuyên Nghiệp</h5>
+                        <p>Những đầu bếp hàng đầu mang đến những món ăn chất lượng với sự tinh tế và sáng tạo.</p>
                     </div>
                 </div>
             </div>
@@ -14,8 +14,8 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                        <h5>Quality Food</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        <h5>Thực Phẩm Chất Lượng</h5>
+                        <p>Các món ăn được chế biến từ nguyên liệu tươi ngon, đảm bảo chất lượng và an toàn thực phẩm.</p>
                     </div>
                 </div>
             </div>
@@ -23,8 +23,8 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                        <h5>Online Order</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        <h5>Đặt Hàng Trực Tuyến</h5>
+                        <p>Dịch vụ đặt hàng trực tuyến tiện lợi, giúp bạn dễ dàng lựa chọn và mua sắm từ xa.</p>
                     </div>
                 </div>
             </div>
@@ -32,8 +32,8 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                        <h5>24/7 Service</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        <h5>Dịch Vụ 24/7</h5>
+                        <p>Hỗ trợ khách hàng 24/7 để đảm bảo mọi nhu cầu và yêu cầu của bạn được đáp ứng kịp thời.</p>
                     </div>
                 </div>
             </div>

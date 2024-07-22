@@ -8,7 +8,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{asset('clients/img/favicon.ico')}}" rel="icon">
+    <link href="{{ asset('clients/img/favicon.ico') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
                 <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Nhà hàng</h1>
-              
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -47,18 +47,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="{{ route('/trang-chu') }}" class="nav-item nav-link active">Trang Chủ</a>
-                    <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
-                    <a href="service.html" class="nav-item nav-link">Dịch Vụ</a>
+
+
                     <a href="{{ route('/san-pham') }}" class="nav-item nav-link">Thực Đơn</a>
-
-                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt Bàn</a>
-                    <a href="team.html" class="nav-item nav-link">Đội Ngũ</a>
-                    <a href="testimonial.html" class="nav-item nav-link">Khách Hàng</a>
-
-
-                    <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                    <a href="{{ route('/lien-he') }}" class="nav-item nav-link">Liên Hệ</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
+                <a href="{{ route('/dat-ban') }}" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
             </div>
         </nav>
 
@@ -67,9 +61,11 @@
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6 text-center text-lg-start">
                         <h1 class="display-3 text-white animated slideInLeft">Thưởng Thức<br>Đồ Ăn Ngon</h1>
-                        <p class="text-white animated slideInLeft mb-4 pb-2">Tạm thời là elitr rebum tại clita. Diam
-                            dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                            stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <p class="text-white animated slideInLeft mb-4 pb-2">Trải nghiệm hương vị tuyệt hảo với các món
+                            ăn đặc sắc từ khắp nơi trên thế giới. Từ những món ăn truyền thống đến những sáng tạo ẩm
+                            thực độc đáo, mỗi món ăn đều mang đến cho bạn một trải nghiệm ẩm thực không thể quên. Hãy để
+                            vị giác của bạn được thưởng thức sự kết hợp hoàn hảo của các nguyên liệu tươi ngon và kỹ
+                            thuật chế biến tinh tế.</p>
                         <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt Bàn</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-end overflow-hidden">
