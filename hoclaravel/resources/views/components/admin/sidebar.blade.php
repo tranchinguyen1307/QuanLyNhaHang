@@ -69,7 +69,7 @@
                     </ul>
                 </li>
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-tag"></i>
                         <p>
@@ -79,24 +79,21 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/category" class="nav-link">
+                            <a href="{{ route('category.edit') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/category/add" class="nav-link">
+                            <a href="{{ route('category.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
 
                     </ul>
-<<<<<<< HEAD
-                </li> --}}
-=======
                 </li>
->>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
+                </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
