@@ -47,20 +47,15 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="{{ route('/trang-chu') }}" class="nav-item nav-link active">Trang Chủ</a>
-                    <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
-                    <a href="service.html" class="nav-item nav-link">Dịch Vụ</a>
-                    <a href="{{ route('/san-pham') }}" class="nav-item nav-link">Thực Đơn</a>
+                    <a href="" class="nav-item nav-link">Thực Đơn</a>
 
-                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt Bàn</a>
-                    <a href="team.html" class="nav-item nav-link">Đội Ngũ</a>
-                    <a href="testimonial.html" class="nav-item nav-link">Khách Hàng</a>
+                    <a href="" class="nav-item nav-link">Đặt Bàn</a>
+                    {{-- <a href="team.html" class="nav-item nav-link">Đội Ngũ</a>
+                    <a href="testimonial.html" class="nav-item nav-link">Khách Hàng</a> --}}
 
 
-                    <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                    <a href="#" class="nav-item nav-link">Liên Hệ</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4">Đặt Bàn</a>
-                    <a href="{{ route('/lien-he') }}" class="nav-item nav-link">Liên Hệ</a>
-                    <a href="{{ route('/dat-ban') }}" class="nav-item nav-link">Đặt bàn</a>
                 </div>
                 <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
             </div>
