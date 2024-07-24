@@ -23,17 +23,13 @@ Route::prefix('client')->name('client.')->group(function () {
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
 });
 
-Route::prefix('table')->name('table.')->group(function () {
-    Route::get('/', [TableHomeController::class, 'index'])->name('index');
-    Route::get('/create', [TableHomeController::class, 'create'])->name('create');
-    Route::get('/edit', [TableHomeController::class, 'edit'])->name('edit');
-});
+Route::get('/table', [TableHomeController::class, 'index'])->name('table');
+Route::get('/table/create', [TableHomeController::class, 'create'])->name('table.create');
+Route::get('/table/edit', [TableHomeController::class, 'edit'])->name('table.edit');
 
-route::prefix('employees')->name('employees.')->group(function () {
-    Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
-    Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
-    Route::get('/edit', [EmployeesHomeController::class, 'edit'])->name('edit');
-});
+Route::get('/employees', [EmployeesHomeController::class, 'index'])->name('employees');
+Route::get('/employees/create', [EmployeesHomeController::class, 'create'])->name('employees.create');
+Route::get('/employees/edit', [EmployeesHomeController::class, 'edit'])->name('employees.edit');
 
 Route::get('/customer', [CustomerHomeController::class, 'index'])->name('customer');
 Route::get('/customer/create', [CustomerHomeController::class, 'create'])->name('customer.create');
