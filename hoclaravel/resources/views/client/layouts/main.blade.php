@@ -47,12 +47,25 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="{{ route('/trang-chu') }}" class="nav-item nav-link active">Trang Chủ</a>
+<<<<<<< HEAD
 
 
                     <a href="{{ route('client.san-pham.index') }}" class="nav-item nav-link">Thực Đơn</a>
                     <a href="{{ route('client.lien-he.index') }}" class="nav-item nav-link">Liên Hệ</a>
                     <a href="{{ route('client.dat-ban.index') }}" class="nav-item nav-link">Đặt bàn</a>
                 </div>
+=======
+                    <a href="" class="nav-item nav-link">Thực Đơn</a>
+
+                    <a href="" class="nav-item nav-link">Đặt Bàn</a>
+                    {{-- <a href="team.html" class="nav-item nav-link">Đội Ngũ</a>
+                    <a href="testimonial.html" class="nav-item nav-link">Khách Hàng</a> --}}
+
+
+                    <a href="#" class="nav-item nav-link">Liên Hệ</a>
+                </div>
+                </div>
+>>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
                 <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
             </div>
         </nav>

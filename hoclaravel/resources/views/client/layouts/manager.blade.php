@@ -8,6 +8,10 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
+=======
+                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+>>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
                         <img class="img-fluid" src="{{asset('clients/img/team-1.jpg')}}" alt="Thành viên 1">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
@@ -22,6 +26,10 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
+=======
+                        <img class="img-fluid" src="img/team-2.jpg" alt="">
+>>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
                         <img class="img-fluid" src="{{asset('clients/img/team-2.jpg')}}" alt="Thành viên 2">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
@@ -36,6 +44,10 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
+=======
+                        <img class="img-fluid" src="img/team-3.jpg" alt="">
+>>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
                         <img class="img-fluid" src="{{asset('clients/img/team-3.jpg')}}" alt="Thành viên 3">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
@@ -50,7 +62,15 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
                         <img class="img-fluid" src="{{asset('clients/img/team-4.jpg')}}" alt="Thành viên 4">
+=======
+<<<<<<< HEAD
+                        <img class="img-fluid" src="img/team-4.jpg" alt="">
+=======
+                        <img class="img-fluid" src="{{asset('clients/img/team-4.jpg')}}" alt="Thành viên 4">
+>>>>>>> bca95e1 (chỉnh sửa đường dẫn hình ảnh)
+>>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
