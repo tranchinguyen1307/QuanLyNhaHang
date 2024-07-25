@@ -55,7 +55,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('menu.index') }}" class="nav-link">
+                            <a href="{{ route('menu') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -69,34 +69,9 @@
                     </ul>
                 </li>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tag"></i>
-                        <p>
-                            Danh mục
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/category" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/category/add" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm</p>
-                            </a>
-                        </li>
 
-                    </ul>
-<<<<<<< HEAD
-                </li> --}}
-=======
                 </li>
->>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
+
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -107,7 +82,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('table.index') }}" class="nav-link">
+                            <a href="{{ route('table') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -130,7 +105,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('employees.index') }}" class="nav-link">
+                            <a href="{{ route('employees') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -153,7 +128,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('customer.index') }}" class="nav-link">
+                            <a href="{{ route('customer') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -167,7 +142,7 @@
                     </ul>
                 </li>
 
-                    </ul>
+            </ul>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
