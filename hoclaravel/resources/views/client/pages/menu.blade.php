@@ -11,11 +11,11 @@
                 <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                     @foreach ($categories as $category)
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" data-bs-toggle="pill"
+                            <a class="d-flex  align-items-center text-start mx-3 ms-0 pb-3" data-bs-toggle="pill"
                                 href="#tab-{{ $category->id }}">
                                 <i class="fa fa-coffee fa-2x text-primary"></i>
+
                                 <div class="ps-3">
-                                    <small class="text-body">Danh mục</small>
                                     <h6 class="mt-n1 mb-0">{{ $category->name }}</h6>
                                 </div>
                             </a>

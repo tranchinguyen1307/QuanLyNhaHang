@@ -6,10 +6,16 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function destroy($id)
     {
-        $categories = Category::all();
+        $category = Category::findOrFail($id);
 
-        return view('client.menu', compact('categories'));
+        if ($category->name === 'Chưa phân loại') {
+            return redirect()->back()->with('error', 'Danh mục mặc định không thể bị xóa.');
+        }
+
+        $category->delete();
+
+        return redirect()->route('categories.index')->with('success', 'Danh mục đã được xóa thành công.');
     }
 }

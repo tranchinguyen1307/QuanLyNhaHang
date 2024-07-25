@@ -3,11 +3,7 @@
      @section('title', 'Nhà hàng NMN ')
      @section('content')
 
-         <!-- Header Start -->
-         <!-- Header End -->
 
-         <!-- Navbar & Hero Start -->
-         <!-- Navbar & Hero End -->
 
          <!-- Service Start -->
          @include('client.layouts.service')
@@ -19,7 +15,7 @@
          <!-- About End -->
 
 
-    
+
          <!-- manager Start -->
          @include('client.layouts.manager')
          <!-- manager End -->
@@ -36,4 +32,3 @@
          <!-- company-info End -->
 
      @endsection
-

@@ -78,7 +78,26 @@
     </div>
     @yield('content')
     <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
+
+
     <div class=" bg-white p-0">
+        <div class="container-xxl position-relative p-0">
+
+            <x-client.navbar>
+            </x-client.navbar>
+            <!-- Hiển thị tên người dùng sau khi đăng nhập -->
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <x-client.banner>
+                </x-client.banner>
+            </div>
+
+
+        </div>
+
+        @yield('content')
+        <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
+
         <!-- Spinner Start -->
         <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">

@@ -8,7 +8,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="{{asset('clients/img/team-1.jpg')}}" alt="Thành viên 1">
+                        <img class="img-fluid" src="{{ asset('clients/img/team-1.jpg') }}" alt="Thành viên 1">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="{{asset('clients/img/team-2.jpg')}}" alt="Thành viên 2">
+                        <img class="img-fluid" src="{{ asset('clients/img/team-2.jpg') }}" alt="Thành viên 2">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -36,7 +36,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="{{asset('clients/img/team-3.jpg')}}" alt="Thành viên 3">
+                        <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -50,7 +50,9 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="{{asset('clients/img/team-4.jpg')}}" alt="Thành viên 4">
+
+                        <img class="img-fluid" src="{{ asset('clients/img/team-4.jpg') }}" alt="Thành viên 4">
+
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
