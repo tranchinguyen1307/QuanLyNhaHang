@@ -36,7 +36,13 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+
                         <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
+
+
+
+
+
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
