@@ -35,61 +35,8 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 
 
-=======
-    <div class="container-xxl position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Nhà hàng</h1>
-
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0 pe-4">
-                    <a href="{{ route('/trang-chu') }}" class="nav-item nav-link active">Trang Chủ</a>
-                    <a href="{{ route('client.san-pham.index') }}" class="nav-item nav-link">Thực Đơn</a>
-                    <a href="{{ route('client.lien-he.index') }}" class="nav-item nav-link">Liên Hệ</a>
-                    <a href="{{ route('client.dat-ban.index') }}" class="nav-item nav-link">Đặt bàn</a>
-                </div>
-                <div>
-                    <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
-                </div>
-
-            </div>
-
-    </div>
-    </div>
-
-  
-    </div>
-    </nav>
-
-    <div class="container-xxl py-5 bg-dark hero-header mb-5">
-        <div class="container my-5 py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="display-3 text-white animated slideInLeft">Thưởng Thức<br>Đồ Ăn Ngon</h1>
-                    <p class="text-white animated slideInLeft mb-4 pb-2">Trải nghiệm hương vị tuyệt hảo với các món
-                        ăn đặc sắc từ khắp nơi trên thế giới. Từ những món ăn truyền thống đến những sáng tạo ẩm
-                        thực độc đáo, mỗi món ăn đều mang đến cho bạn một trải nghiệm ẩm thực không thể quên. Hãy để
-                        vị giác của bạn được thưởng thức sự kết hợp hoàn hảo của các nguyên liệu tươi ngon và kỹ
-                        thuật chế biến tinh tế.</p>
-                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt Bàn</a>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                    <img class="img-fluid" src="{{ asset('clients/img/hero.png') }}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    @yield('content')
-    <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
->>>>>>> a321f6b69be3f7341f0ee94627e59e387cbe32fe
     <div class=" bg-white p-0">
         <div class="container-xxl position-relative p-0">
 
