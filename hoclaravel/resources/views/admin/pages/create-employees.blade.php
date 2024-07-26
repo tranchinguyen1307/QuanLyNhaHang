@@ -65,4 +65,5 @@
         </div>
         <!--/.col (right) -->
       </div>
+    </section>
 @endsection
