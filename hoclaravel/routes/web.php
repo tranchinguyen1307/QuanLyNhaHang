@@ -11,13 +11,6 @@ use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-// menu
-Route::prefix('menu')->name('menu.')->group(function () {
-    Route::get('/', [AdminHomeController::class, 'index'])->name('index');
-    Route::get('/create', [AdminHomeController::class, 'create'])->name('create');
-    Route::get('/edit', [AdminHomeController::class, 'edit'])->name('edit');
-});
-
 // /client
 Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
 
