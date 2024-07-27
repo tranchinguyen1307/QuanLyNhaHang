@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\CustomerController as CustomerHomeController;
 use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
 use App\Http\Controllers\Admin\MenuController as AdminHomeController;
 use App\Http\Controllers\Admin\TableController as TableHomeController;
-use App\Http\Controllers\Admin\TestController;
 use App\Http\Controllers\Client\ClientBookTableController;
 use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
@@ -66,5 +65,3 @@ Route::middleware([
         return view('client.pages.home');
     })->name('/trang-chu');
 });
-
-Route::get('/test', [TestController::class, 'index']);
