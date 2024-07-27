@@ -7,10 +7,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-            <a href="{{ route('/trang-chu') }}" class="nav-item nav-link active">Trang Chủ</a>
-            <a href="{{ route('client.san-pham.index') }}" class="nav-item nav-link">Thực Đơn</a>
-            <a href="{{ route('client.lien-he.index') }}" class="nav-item nav-link">Liên Hệ</a>
-            <a href="{{ route('client.dat-ban.index') }}" class="nav-item nav-link">Đặt bàn</a>
+            <a href="{{ route('/trang-chu') }}"
+                class="nav-item nav-link  {{ request()->is('/') ? 'active' : '' }}">Trang
+                Chủ</a>
+            <a href="{{ route('client.san-pham.index') }}"
+                class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Thực Đơn</a>
+            <a href="{{ route('client.lien-he.index') }}"
+                class="nav-item nav-link {{ request()->is('client/lien-he*') ? 'active' : '' }}">Liên Hệ</a>
+            <a href="{{ route('client.dat-ban.index') }}"
+                class="nav-item nav-link {{ request()->is('client/dat-ban*') ? 'active' : '' }}">Đặt bàn</a>
+
         </div>
 
         @if (Auth::check())

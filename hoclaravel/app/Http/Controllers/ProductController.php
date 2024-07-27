@@ -24,6 +24,7 @@ class ProductController extends Controller
         foreach ($categories as $category) {
 
             $productsByCategory[$category->id] = Product::where('category_id', $category->id)->get();
+
         }
 
         return $productsByCategory;
