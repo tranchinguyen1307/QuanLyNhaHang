@@ -1,59 +1,122 @@
 @extends('admin.layouts.masterlayout')
-@section('title','Đặt Bàn')
+@section('title', 'Danh sách đặt bàn')
 @section('content')
-
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <section class="content">
-          <div class="container-fluid">
+    <section class="content">
+        <div class="container-fluid">
             <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                      <thead>
-                        <tr>
-                          <th>STT</th>
-                          <th>Số Bàn</th>
-                          <th>Tên khách</th>
-                          <th>Lượng khách</th>
-                          <th>Thời gian</th>
-                          <th>Tiền cọc</th>
-                          <th>Người thêm</th>
-                          <th>Ngày thêm</th>
-                          <th>Thao tác</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                            <td>1</td>
-                            <td>8</td>
-                            <td>Minh Nhật</td>
-                            <td>4</td>
-                            <td>8:00 PM</td>
-                            <td>200.000 VNĐ</td>
-                            <td>Minh Nhật</td>
-                            <td>10/10/2024</td>
-                            <td class = row>
-                              <a class="btn btn-primary col-5" href="{{ route('table.edit') }}">Sửa</a>
-                              <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
-                                  <input name="id" type="hidden" value="1">
-                                  <button type ="submit" class = "btn btn-danger">Xóa</button>
-                              </form>
-                            </td>
-                      </tbody>
-                    </table>
-                    <ul class="pagination pagination-primary">
-      
-                  <li class="page-item"><a class="page-link" href="/admin?page=1">Previous</a></li>
-                          <li class="page-item active ml-2"><a class="page-link" href="/admin?page=1">1</a></li>
-                  <li class="page-item ml-2"><a class="page-link" href="/admin?page=1">Next</a></li>
-              </ul>
-                  </div>
+                <div class="col-md-12">
+                    <!-- Bảng chưa xác nhận -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Chưa xác nhận</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Số bàn</th>
+                                        <th>Tên khách</th>
+                                        <th>Lượng khách</th>
+                                        <th>Thời gian</th>
+                                        <th>Ghi chú</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nguyên</td>
+                                        <td>4</td>
+                                        <td>12:00</td>
+                                        <td>sbhbdsmjds</td>
+                                        <td class="status-cell" data-id="1">Chưa xác nhận</td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary">Chi tiết</a>
+                                            <form method="POST" action="#" style="display:inline-block;">
+                                                <button type="submit" class="btn btn-danger">Xóa</button>
+                                            </form>
+                                            <a href="#" class="btn btn-success">Thanh toán</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Trạng thái
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#" data-id="1"
+                                                        data-status="Chưa thanh toán cọc">Chưa thanh toán cọc</a>
+                                                    <a class="dropdown-item" href="#" data-id="1"
+                                                        data-status="Chưa xác nhận">Chưa xác nhận</a>
+                                                    <a class="dropdown-item" href="#" data-id="1"
+                                                        data-status="Đã xác nhận">Đã xác nhận</a>
+                                                    <a class="dropdown-item" href="#" data-id="1"
+                                                        data-status="Đã thanh toán">Đã thanh toán</a>
+                                                    <a class="dropdown-item" href="#" data-id="1"
+                                                        data-status="Đã hủy">Đã hủy</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Nhựt</td>
+                                        <td>2</td>
+                                        <td>13:00</td>
+                                        <td>None</td>
+                                        <td class="status-cell" data-id="2">Đã xác nhận</td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary">Chi tiết</a>
+                                            <form method="POST" action="#" style="display:inline-block;">
+                                                <button type="submit" class="btn btn-danger">Xóa</button>
+                                            </form>
+                                            <a href="#" class="btn btn-success">Thanh toán</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Trạng thái
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#" data-id="2"
+                                                        data-status="Chưa thanh toán cọc">Chưa thanh toán cọc</a>
+                                                    <a class="dropdown-item" href="#" data-id="2"
+                                                        data-status="Chưa xác nhận">Chưa xác nhận</a>
+                                                    <a class="dropdown-item" href="#" data-id="2"
+                                                        data-status="Đã xác nhận">Đã xác nhận</a>
+                                                    <a class="dropdown-item" href="#" data-id="2"
+                                                        data-status="Đã thanh toán">Đã thanh toán</a>
+                                                    <a class="dropdown-item" href="#" data-id="2"
+                                                        data-status="Đã hủy">Đã hủy</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Thêm các hàng dữ liệu cứng khác tương tự -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
-    </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusItems = document.querySelectorAll('.dropdown-item');
+            statusItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const reservationId = this.dataset.id;
+                    const newStatus = this.dataset.status;
+                    const statusCell = document.querySelector(
+                        `.status-cell[data-id="${reservationId}"]`);
+                    statusCell.textContent =
+                        newStatus; // Cập nhật trạng thái trực tiếp trên giao diện
+                });
+            });
+        });
+    </script>
 @endsection

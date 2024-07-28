@@ -32,6 +32,8 @@ Route::prefix('table')->name('table.')->group(function () {
     Route::get('/', [TableHomeController::class, 'index'])->name('index');
     Route::get('/create', [TableHomeController::class, 'create'])->name('create');
     Route::get('/edit', [TableHomeController::class, 'edit'])->name('edit');
+    Route::get('/quan-ly-dat-ban', [TableHomeController::class, 'table_manager'])->name('manager');
+    Route::get('/thanh-toan', [TableHomeController::class, 'checkOut'])->name('check_out');
 });
 
 // Employees
@@ -56,12 +58,12 @@ route::prefix('/category')->name('category.')->group(function () {
 });
 
 // Middleware for authentication and verification
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/', function () {
-        return view('client.pages.home');
-    })->name('/trang-chu');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/', function () {
+//         return view('client.pages.home');
+//     })->name('/trang-chu');
+// });

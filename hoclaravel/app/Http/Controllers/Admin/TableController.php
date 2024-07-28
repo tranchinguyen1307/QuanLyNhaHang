@@ -20,4 +20,14 @@ class TableController extends Controller
     {
         return view('admin.pages.Tables.edit-table');
     }
+
+    public function table_manager()
+    {
+        return view('admin.pages.Tables.table_manager');
+    }
+
+    public function checkOut()
+    {
+        return view('admin.pages.Tables.check_out');
+    }
 }
