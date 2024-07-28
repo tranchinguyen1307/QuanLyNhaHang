@@ -6,6 +6,7 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
+<<<<<<< HEAD
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
@@ -17,5 +18,12 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('categories.index')->with('success', 'Danh mục đã được xóa thành công.');
+=======
+    public function index()
+    {
+        $categories = Category::all();
+
+        return view('client.menu', compact('categories'));
+>>>>>>> origin/minhToan
     }
 }
