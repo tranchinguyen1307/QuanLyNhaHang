@@ -1,5 +1,5 @@
 @extends('admin.layouts.masterlayout')
-@section('title','Khách Hàng')
+@section('title','Đặt Bàn')
 @section('content')
 
 <body class="hold-transition sidebar-mini">
@@ -14,11 +14,11 @@
                       <thead>
                         <tr>
                           <th>STT</th>
-                          <th>Họ và Tên</th>
-                          <th>Email</th>
-                          <th>Số điện thoại</th>
-                          <th>Địa chỉ</th>
-                          <th>Mật khẩu</th>
+                          <th>Số Bàn</th>
+                          <th>Tên khách</th>
+                          <th>Lượng khách</th>
+                          <th>Thời gian</th>
+                          <th>Tiền cọc</th>
                           <th>Người thêm</th>
                           <th>Ngày thêm</th>
                           <th>Thao tác</th>
@@ -26,15 +26,15 @@
                       </thead>
                       <tbody>
                             <td>1</td>
-                            <td>Nguyễn Nhật Minh</td>
-                            <td>minhnhat47@gmail.com</td>
-                            <td>0989224031</td>
-                            <td>107.HVT.Cần Thơ</td>
-                            <td>######</td>
-                            <th>Minh Nhật</th>
-                            <th>10/10/2024</th>
+                            <td>8</td>
+                            <td>Minh Nhật</td>
+                            <td>4</td>
+                            <td>8:00 PM</td>
+                            <td>200.000 VNĐ</td>
+                            <td>Minh Nhật</td>
+                            <td>10/10/2024</td>
                             <td class = row>
-                              <a class="btn btn-primary col-5" href="{{ route('admin.customer.edit') }}">Sửa</a>
+                              <a class="btn btn-primary col-5" href="{{ route('admin.table.edit') }}">Sửa</a>
                               <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
                                   <input name="id" type="hidden" value="1">
                                   <button type ="submit" class = "btn btn-danger">Xóa</button>

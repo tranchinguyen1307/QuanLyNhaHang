@@ -42,19 +42,41 @@ Route::prefix('employees')->name('employees.')->group(function () {
     Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
     Route::get('/edit', [EmployeesHomeController::class, 'edit'])->name('edit');
 });
+Route::prefix('admin')->name('admin.')->group(function () {
+    // menu
+    Route::prefix('menu')->name('menu.')->group(function () {
+        Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+        Route::get('/create', [AdminHomeController::class, 'create'])->name('create');
+        Route::get('/edit', [AdminHomeController::class, 'edit'])->name('edit');
+    });
 
-// customer
-Route::prefix('/customer')->name('customer.')->group(function () {
-    Route::get('/', [CustomerHomeController::class, 'index'])->name('index');
-    Route::get('/create', [CustomerHomeController::class, 'create'])->name('create');
-    Route::get('/edit', [CustomerHomeController::class, 'edit'])->name('edit');
-});
+    // Table
+    Route::prefix('table')->name('table.')->group(function () {
+        Route::get('/', [TableHomeController::class, 'index'])->name('index');
+        Route::get('/create', [TableHomeController::class, 'create'])->name('create');
+        Route::get('/edit', [TableHomeController::class, 'edit'])->name('edit');
+    });
 
-// categoris
-route::prefix('/category')->name('category.')->group(function () {
-    Route::get('/', [CategoryController::class, 'index'])->name('index');
-    Route::get('/create', [CategoryController::class, 'create'])->name('create');
-    Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
+    // Employees
+    Route::prefix('employees')->name('employees.')->group(function () {
+        Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
+        Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
+        Route::get('/edit', [EmployeesHomeController::class, 'edit'])->name('edit');
+    });
+
+    // Customer
+    Route::prefix('customer')->name('customer.')->group(function () {
+        Route::get('/', [CustomerHomeController::class, 'index'])->name('index');
+        Route::get('/create', [CustomerHomeController::class, 'create'])->name('create');
+        Route::get('/edit', [CustomerHomeController::class, 'edit'])->name('edit');
+    });
+
+    // Category
+    Route::prefix('category')->name('category.')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('create');
+        Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
+    });
 });
 
 // Middleware for authentication and verification
