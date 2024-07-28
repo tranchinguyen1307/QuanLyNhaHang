@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController as CustomerHomeController;
 use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
 use App\Http\Controllers\Admin\MenuController as AdminHomeController;
@@ -8,18 +9,7 @@ use App\Http\Controllers\Client\ClientBookTableController;
 use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
-
-Route::get('/menu', [AdminHomeController::class, 'index'])->name('menu');
-Route::get('/menu/create', [AdminHomeController::class, 'create'])->name('menu.create');
-Route::get('/menu/edit', [AdminHomeController::class, 'edit'])->name('menu.edit');
-
-// client
-=======
-use App\Http\Controllers\Admin\CategoryController;
-use Illuminate\Support\Facades\Route;
-
 
 // menu
 Route::prefix('menu')->name('menu.')->group(function () {
@@ -29,7 +19,6 @@ Route::prefix('menu')->name('menu.')->group(function () {
 });
 
 // /client
->>>>>>> origin/minhToan
 Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
 
 Route::prefix('client')->name('client.')->group(function () {
@@ -37,17 +26,15 @@ Route::prefix('client')->name('client.')->group(function () {
     Route::get('/dat-ban', [ClientBookTableController::class, 'index'])->name('dat-ban.index');
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
 });
-<<<<<<< HEAD
-=======
 
-// Table 
+// Table
 Route::prefix('table')->name('table.')->group(function () {
     Route::get('/', [TableHomeController::class, 'index'])->name('index');
     Route::get('/create', [TableHomeController::class, 'create'])->name('create');
     Route::get('/edit', [TableHomeController::class, 'edit'])->name('edit');
 });
 
-// Employees 
+// Employees
 Route::prefix('employees')->name('employees.')->group(function () {
     Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
     Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
@@ -60,7 +47,6 @@ Route::prefix('/customer')->name('customer.')->group(function () {
     Route::get('/create', [CustomerHomeController::class, 'create'])->name('create');
     Route::get('/edit', [CustomerHomeController::class, 'edit'])->name('edit');
 });
->>>>>>> origin/minhToan
 
 // categoris
 route::prefix('/category')->name('category.')->group(function () {
@@ -69,30 +55,13 @@ route::prefix('/category')->name('category.')->group(function () {
     Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
 });
 
-<<<<<<< HEAD
-Route::get('/employees', [EmployeesHomeController::class, 'index'])->name('employees');
-Route::get('/employees/create', [EmployeesHomeController::class, 'create'])->name('employees.create');
-Route::get('/employees/edit', [EmployeesHomeController::class, 'edit'])->name('employees.edit');
-
-Route::get('/customer', [CustomerHomeController::class, 'index'])->name('customer');
-Route::get('/customer/create', [CustomerHomeController::class, 'create'])->name('customer.create');
-Route::get('/customer/edit', [CustomerHomeController::class, 'edit'])->name('customer.edit');
-
-=======
 // Middleware for authentication and verification
->>>>>>> origin/minhToan
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-<<<<<<< HEAD
-    Route::get('/', function () {
-        return view('client.pages.home');
-    })->name('/trang-chu');
-=======
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
->>>>>>> origin/minhToan
 });
