@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
 
 <head>
     <meta charset="utf-8">
@@ -44,6 +47,7 @@
     @livewireScripts
 </body>
 
+<<<<<<< HEAD
 =======
     <head>
         <meta charset="utf-8">
@@ -88,4 +92,6 @@
         @livewireScripts
     </body>
 >>>>>>> origin/minhToan
+=======
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
 </html>

@@ -35,6 +35,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container-xxl position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
@@ -65,10 +66,15 @@
 
             </div>
 
-    </div>
-    </div>
+=======
 
-  
+
+    <a href="{{ route('client.san-pham.index') }}" class="nav-item nav-link">Thực Đơn</a>
+    <a href="{{ route('client.lien-he.index') }}" class="nav-item nav-link">Liên Hệ</a>
+    <a href="{{ route('client.dat-ban.index') }}" class="nav-item nav-link">Đặt bàn</a>
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
+    </div>
+    <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
     </div>
     </nav>
 
@@ -95,6 +101,39 @@
     <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
 
 
+
+
+
+
+    <a href="{{ route('client.san-pham.index') }}" class="nav-item nav-link">Thực Đơn</a>
+    <a href="{{ route('client.lien-he.index') }}" class="nav-item nav-link">Liên Hệ</a>
+    <a href="{{ route('client.dat-ban.index') }}" class="nav-item nav-link">Đặt bàn</a>
+    </div>
+    <a href="" class="btn btn-primary py-2 px-4">Đăng nhập</a>
+    </div>
+    </nav>
+
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container my-5 py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-3 text-white animated slideInLeft">Thưởng Thức<br>Đồ Ăn Ngon</h1>
+                    <p class="text-white animated slideInLeft mb-4 pb-2">Trải nghiệm hương vị tuyệt hảo với các món
+                        ăn đặc sắc từ khắp nơi trên thế giới. Từ những món ăn truyền thống đến những sáng tạo ẩm
+                        thực độc đáo, mỗi món ăn đều mang đến cho bạn một trải nghiệm ẩm thực không thể quên. Hãy để
+                        vị giác của bạn được thưởng thức sự kết hợp hoàn hảo của các nguyên liệu tươi ngon và kỹ
+                        thuật chế biến tinh tế.</p>
+                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt Bàn</a>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                    <img class="img-fluid" src="{{ asset('clients/img/hero.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    @yield('content')
+    <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
 
 
     <div class=" bg-white p-0">

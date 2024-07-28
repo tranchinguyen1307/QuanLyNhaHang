@@ -27,7 +27,7 @@
                         <div id="tab-{{ $category->id }}" class="tab-pane fade show p-0">
                             <div class="row">
                                 @foreach ($products[$category->id] ?? [] as $product)
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="col-lg-6 col-md-4 col-sm-6 mb-4">
                                         <div class="d-flex align-items-center">
                                             <img class="flex-shrink-0 img-fluid rounded"
                                                 src="{{ asset('clients/img/' . $product->image) }}" alt=""

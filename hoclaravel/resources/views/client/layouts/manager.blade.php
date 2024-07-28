@@ -9,11 +9,15 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <img class="img-fluid" src="{{ asset('clients/img/team-1.jpg') }}" alt="Thành viên 1">
 =======
                         <img class="img-fluid" src="img/team-1.jpg" alt="">
                         <img class="img-fluid" src="{{asset('clients/img/team-1.jpg')}}" alt="Thành viên 1">
 >>>>>>> origin/minhToan
+=======
+                        <img class="img-fluid" src="{{ asset('clients/img/team-1.jpg') }}" alt="Thành viên 1">
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -28,11 +32,15 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <img class="img-fluid" src="{{ asset('clients/img/team-2.jpg') }}" alt="Thành viên 2">
 =======
                         <img class="img-fluid" src="img/team-2.jpg" alt="">
                         <img class="img-fluid" src="{{asset('clients/img/team-2.jpg')}}" alt="Thành viên 2">
 >>>>>>> origin/minhToan
+=======
+                        <img class="img-fluid" src="{{ asset('clients/img/team-2.jpg') }}" alt="Thành viên 2">
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -47,6 +55,7 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
 =======
 <<<<<<< HEAD
@@ -59,6 +68,9 @@
 >>>>>>> 03c666c (fix prefix route)
                         <img class="img-fluid" src="{{asset('clients/img/team-3.jpg')}}" alt="Thành viên 3">
 >>>>>>> origin/minhToan
+=======
+                        <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -72,6 +84,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                         <img class="img-fluid" src="{{ asset('clients/img/team-4.jpg') }}" alt="Thành viên 4">
@@ -87,6 +100,11 @@
 >>>>>>> bca95e1 (chỉnh sửa đường dẫn hình ảnh)
 >>>>>>> 03c666ca727aace30ca2f5b329786da38ad5c654
 >>>>>>> origin/minhToan
+=======
+
+                        <img class="img-fluid" src="{{ asset('clients/img/team-4.jpg') }}" alt="Thành viên 4">
+
+>>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
