@@ -67,8 +67,8 @@
                 <!-- right column -->
                 <div class="col-md-6">
 
-                </div>
-                <!--/.col (right) -->
-            </div>
+        </div>
+        <!--/.col (right) -->
+      </div>
     </section>
 @endsection

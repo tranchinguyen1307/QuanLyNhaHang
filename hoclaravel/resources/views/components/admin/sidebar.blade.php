@@ -55,13 +55,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('menu.index') }}" class="nav-link">
+                            <a href="{{ route('admin.menu.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('menu.create') }}" class="nav-link">
+                            <a href="{{ route('admin.menu.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>
@@ -79,13 +79,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('category.edit') }}" class="nav-link">
+                            <a href="{{ route('admin.category.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('category.create') }}" class="nav-link">
+                            <a href="{{ route('admin.category.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>
@@ -104,13 +104,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('table.index') }}" class="nav-link">
+                            <a href="{{ route('admin.table.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('table.create') }}" class="nav-link">
+                            <a href="{{ route('admin.table.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>
@@ -127,13 +127,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('employees.index') }}" class="nav-link">
+                            <a href="{{ route('admin.employees.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('employees.create') }}" class="nav-link">
+                            <a href="{{ route('admin.employees.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>
@@ -150,13 +150,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('customer.index') }}" class="nav-link">
+                            <a href="{{ route('admin.customer.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('customer.create') }}" class="nav-link">
+                            <a href="{{ route('admin.customer.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm</p>
                             </a>

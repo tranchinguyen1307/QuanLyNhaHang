@@ -34,7 +34,7 @@
                             <td>Minh Nhật</td>
                             <td>10/10/2024</td>
                             <td class = row>
-                              <a class="btn btn-primary col-5" href="{{ route('table.edit') }}">Sửa</a>
+                              <a class="btn btn-primary col-5" href="{{ route('admin.table.edit') }}">Sửa</a>
                               <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
                                   <input name="id" type="hidden" value="1">
                                   <button type ="submit" class = "btn btn-danger">Xóa</button>
