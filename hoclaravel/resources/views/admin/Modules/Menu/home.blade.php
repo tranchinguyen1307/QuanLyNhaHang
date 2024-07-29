@@ -17,20 +17,20 @@
                         <th>Tên món</th>
                         <th>Giá</th>
                         <th>Thể loại</th>
-                        <th>Image</th>
-                        <th>Người thêm</th>
+                        <th>Ảnh</th>
                         <th>Ngày thêm</th>
                         <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>
-                          <td >1</td>
-                          <td class="text-wrap">Phở</td>
-                          <td>20.000 VNĐ</td>
+                      @foreach ($products as $product)
+                      <tr>
+                          <td>{{$product->category_id}}</td>
+                          <td class="text-wrap">{{$product->name}}</td>
+                          <td>{{$product->price}}</td>
                           <td>Món chính</td>
-                          <td><img src="" style= "width:150px; height:100px;" alt="Đang cập nhật"></td>
-                          <td>Minh Toàn</td>
-                          <td>10/10/2024</td>
+                          <td><img src="{{ asset('clients/img/' . $product->image) }}" style= "width: 150px; height:auto; object-fit:cover; border-radius:5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);"></td>
+                          <td>{{$product->created_at}}</td>
                           <td class = row>
                             <a class="btn btn-primary col-5" href="{{ route('admin.menu.edit') }}">Sửa</a>
                             <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
@@ -38,6 +38,8 @@
                                 <button type ="submit" class = "btn btn-danger">Xóa</button>
                             </form>
                           </td>
+                      </tr> 
+                      @endforeach  
                     </tbody>
                   </table>
                   <ul class="pagination pagination-primary">
