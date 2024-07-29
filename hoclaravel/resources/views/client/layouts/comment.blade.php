@@ -10,22 +10,9 @@
                 <p>Dịch vụ tuyệt vời và món ăn ngon miệng. Tôi rất hài lòng với chất lượng phục vụ và sự nhiệt tình của
                     đội ngũ nhân viên.</p>
                 <div class="d-flex align-items-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <img class="img-fluid flex-shrink-0 rounded-circle"
                         src="{{ asset('clients/img/testimonial-1.jpg') }}" style="width: 50px; height: 50px;"
                         alt="Khách hàng 1">
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
-                        style="width: 50px; height: 50px;">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-1.jpg')}}"
-                        style="width: 50px; height: 50px;" alt="Khách hàng 1">
->>>>>>> origin/minhToan
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle"
-                        src="{{ asset('clients/img/testimonial-1.jpg') }}" style="width: 50px; height: 50px;"
-                        alt="Khách hàng 1">
->>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     <div class="ps-3">
                         <h5 class="mb-1">Tên Khách Hàng</h5>
                         <small>Ngành Nghề</small>
@@ -37,22 +24,10 @@
                 <p>DDịch vụ tuyệt vời và món ăn ngon miệng. Tôi rất hài lòng với chất lượng phục vụ và sự nhiệt tình của
                     đội ngũ nhân viên.</p>
                 <div class="d-flex align-items-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     <img class="img-fluid flex-shrink-0 rounded-circle"
                         src="{{ asset('clients/img/testimonial-2.jpg') }}" style="width: 50px; height: 50px;"
                         alt="Khách hàng 2">
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
-                        style="width: 50px; height: 50px;">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-2.jpg')}}"
-                        style="width: 50px; height: 50px;" alt="Khách hàng 2">
->>>>>>> origin/minhToan
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle"
-                        src="{{ asset('clients/img/testimonial-2.jpg') }}" style="width: 50px; height: 50px;"
-                        alt="Khách hàng 2">
->>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     <div class="ps-3">
                         <h5 class="mb-1">Tên Khách Hàng</h5>
                         <small>Ngành Nghề</small>
@@ -64,22 +39,9 @@
                 <p>DDịch vụ tuyệt vời và món ăn ngon miệng. Tôi rất hài lòng với chất lượng phục vụ và sự nhiệt tình của
                     đội ngũ nhân viên.</p>
                 <div class="d-flex align-items-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <img class="img-fluid flex-shrink-0 rounded-circle"
                         src="{{ asset('clients/img/testimonial-3.jpg') }}" style="width: 50px; height: 50px;"
                         alt="Khách hàng 3">
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
-                        style="width: 50px; height: 50px;">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-3.jpg')}}"
-                        style="width: 50px; height: 50px;" alt="Khách hàng 3">
->>>>>>> origin/minhToan
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle"
-                        src="{{ asset('clients/img/testimonial-3.jpg') }}" style="width: 50px; height: 50px;"
-                        alt="Khách hàng 3">
->>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     <div class="ps-3">
                         <h5 class="mb-1">Tên Khách Hàng</h5>
                         <small>Ngành Nghề</small>
@@ -91,22 +53,8 @@
                 <p>DDịch vụ tuyệt vời và món ăn ngon miệng. Tôi rất hài lòng với chất lượng phục vụ và sự nhiệt tình của
                     đội ngũ nhân viên.</p>
                 <div class="d-flex align-items-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img class="img-fluid flex-shrink-0 rounded-circle"
-                        src="{{ asset('clients/img/testimonial-4.jpg') }}" style="width: 50px; height: 50px;"
-                        alt="Khách hàng 4">
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
-                        style="width: 50px; height: 50px;">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('clients/img/testimonial-4.jpg')}}"
                         style="width: 50px; height: 50px;" alt="Khách hàng 4">
->>>>>>> origin/minhToan
-=======
-                    <img class="img-fluid flex-shrink-0 rounded-circle"
-                        src="{{ asset('clients/img/testimonial-4.jpg') }}" style="width: 50px; height: 50px;"
-                        alt="Khách hàng 4">
->>>>>>> 39cfba0bfea50a4ea553bd50de55c6de9645135b
                     <div class="ps-3">
                         <h5 class="mb-1">Tên Khách Hàng</h5>
                         <small>Ngành Nghề</small>
