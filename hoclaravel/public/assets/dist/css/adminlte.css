@@ -52248,3 +52248,28 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+.status-chua-thanh-toan-coc {
+    background-color: #ffc107; /* Màu vàng */
+    color: white;
+}
+
+.status-chua-xac-nhan {
+    background-color: #6c757d; /* Màu xám */
+    color: white;
+}
+
+.status-da-xac-nhan {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+}
+
+.status-da-thanh-toan {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+}
+
+.status-da-huy {
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+}

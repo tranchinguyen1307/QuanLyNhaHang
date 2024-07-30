@@ -115,12 +115,7 @@
                                 <p>Thêm</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('table.manager') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Đặt bàn</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-item">
