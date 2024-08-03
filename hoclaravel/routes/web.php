@@ -39,7 +39,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('employees')->name('employees.')->group(function () {
         Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
         Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
-        Route::get('/edit', [EmployeesHomeController::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [EmployeesHomeController::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}',[EmployeesHomeController::class,'update'])->name('update');
+        Route::post('/store', [EmployeesHomeController::class, 'store'])->name('store');
+        Route::delete('/destroy/{id}', [EmployeesHomeController::class, 'destroy'])->name('destroy');
+
     });
 
     // Customer
@@ -56,6 +60,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
     });
 });
+
+    
 
 
 

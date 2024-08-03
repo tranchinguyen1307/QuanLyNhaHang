@@ -1,6 +1,5 @@
-@extends('admin.layouts.masterlayout')
-@section('title','Nhân Viên')
-@section('content')
+<?php $__env->startSection('title','Khách Hàng'); ?>
+<?php $__env->startSection('content'); ?>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -18,10 +17,7 @@
                           <th>Email</th>
                           <th>Số điện thoại</th>
                           <th>Địa chỉ</th>
-                          <th>Ảnh</th>
                           <th>Mật khẩu</th>
-                          <th>Chức vụ</th>
-                          <th>Trạng thái</th>
                           <th>Người thêm</th>
                           <th>Ngày thêm</th>
                           <th>Thao tác</th>
@@ -29,18 +25,15 @@
                       </thead>
                       <tbody>
                             <td>1</td>
-                            <td>Nguyễn Minh Nhật</td>
+                            <td>Nguyễn Nhật Minh</td>
                             <td>minhnhat47@gmail.com</td>
                             <td>0989224031</td>
                             <td>107.HVT.Cần Thơ</td>
-                            <td><img src="" style= "width:150px; height:100px;" alt="Đang cập nhật"></td>
                             <td>######</td>
-                            <td>Đầu Bếp</td>
-                            <td>Hoạt động</td>
                             <th>Minh Nhật</th>
                             <th>10/10/2024</th>
                             <td class = row>
-                              <a class="btn btn-primary col-5" href="{{ route('admin.employees.edit') }}">Sửa</a>
+                              <a class="btn btn-primary col-5" href="<?php echo e(route('admin.customer.edit')); ?>">Sửa</a>
                               <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
                                   <input name="id" type="hidden" value="1">
                                   <button type ="submit" class = "btn btn-danger">Xóa</button>
@@ -62,4 +55,5 @@
         </section>
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\FPT Polytechnic\Php3\QuanLyNhaHang\hoclaravel\resources\views/admin/pages/customers.blade.php ENDPATH**/ ?>

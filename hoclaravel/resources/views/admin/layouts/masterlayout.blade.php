@@ -14,3 +14,4 @@
 @yield('content')
 </div>
 <x-admin.footer />
+@stack('scripts')
