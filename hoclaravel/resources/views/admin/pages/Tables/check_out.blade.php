@@ -5,6 +5,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <!-- Thông báo thành công -->
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
                     <!-- Thông tin đặt bàn và thanh toán -->
                     <div class="card card-warning">
                         <div class="card-header">
@@ -15,7 +25,6 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Số bàn</th>
                                         <th>Tên khách</th>
                                         <th>Lượng khách</th>
                                         <th>Thời gian</th>
@@ -24,21 +33,16 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        {{-- {{ $table_number }} --}}
-                                        <td>Nguyên</td>
-                                        {{-- {{ $customer_name }} --}}
-                                        <td>4</td>
-                                        {{-- {{ $guest_count }} --}}
-                                        <td>12:00</td>
-                                        {{-- {{ $reservation_time }} --}}
+                                        <td>{{ $reservation->customer_name }}</td>
+                                        <td>{{ $reservation->guest_count }}</td>
+                                        <td>{{ $reservation->reservation_time }}</td>
                                         <td>
-                                            <p name="description" readonly>sbhbdsmjds</p>
-                                            {{-- {{ $description }} --}}
+                                            <p>{{ $reservation->description }}</p>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+
                             <div class="row mt-4">
                                 <!-- Danh sách món ăn đã chọn -->
                                 <div class="col-md-12">
@@ -53,30 +57,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- <!-- Lấy danh sách các món ăn đã chọn từ cơ sở dữ liệu -->
-                                            @foreach ($selectedFoods as $selectedFood)
+                                            @foreach ($cart as $product_id => $details)
                                                 <tr>
-                                                    <td>{{ $selectedFood->food->name }}</td>
-                                                    <td>{{ $selectedFood->quantity }}</td>
-                                                    <td>{{ number_format($selectedFood->food->price, 0, ',', '.') }} VND</td>
-                                                    <td>{{ number_format($selectedFood->food->price * $selectedFood->quantity, 0, ',', '.') }} VND</td>
+                                                    <td>{{ $details['name'] }}</td>
+                                                    <td>{{ $details['quantity'] }}</td>
+                                                    <td>{{ number_format($details['price'], 0, ',', '.') }} VND</td>
+                                                    <td>{{ number_format($details['total'], 0, ',', '.') }} VND</td>
                                                 </tr>
-                                            @endforeach --}}
-                                            <tr>
-                                                <td>Món ăn 1</td>
-                                                <td>2</td>
-                                                <td>50,000 VND</td>
-                                                <td>100,000 VND</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Món ăn 2</td>
-                                                <td>1</td>
-                                                <td>50,000 VND</td>
-                                                <td>50,000 VND</td>
-                                            </tr>
+                                            @endforeach
                                             <tr>
                                                 <td colspan="3" class="text-right"><strong>Tổng cộng:</strong></td>
-                                                <td><strong>150,000 VND</strong></td>
+                                                <td><strong>{{ number_format(array_sum(array_column($cart, 'total')), 0, ',', '.') }}
+                                                        VND</strong></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -102,10 +94,12 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="button" class="btn btn-success" onclick="window.location.href=''">
-                                Khách hàng đã thanh toán
-                            </button>
-                            {{-- {{ route('admin.payment', ['table_number' => 1]) }} --}}
+                            <form action="{{ route('admin.invoices.show', $reservation->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success">
+                                    Khách hàng đã thanh toán
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <!-- /.card -->

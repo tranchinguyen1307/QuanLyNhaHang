@@ -1,11 +1,11 @@
 @extends('admin.layouts.masterlayout')
-@section('title', 'Danh sách đặt bàn')
+@section('title', 'Danh sách hóa đơn')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- Thông báo thành công -->
+
                     @if (session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('success') }}
@@ -15,10 +15,10 @@
                         </div>
                     @endif
 
-                    <!-- Bảng danh sách đặt bàn -->
+                    <!-- Danh sách hóa đơn -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Danh sách đặt bàn</h3>
+                            <h3 class="card-title">Danh sách hóa đơn</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
@@ -34,48 +34,52 @@
                                             <th>Lượng khách</th>
                                             <th>Thời gian</th>
                                             <th>Tiền cọc</th>
+                                            <th>Tổng cộng</th>
                                             <th>Trạng thái</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($reservation as $res)
+                                        @foreach ($reservationsWithTotal as $reservation)
                                             <tr>
                                                 <td>
-                                                    {{ $res->customer_name }}<br>
-                                                    <small>{{ $res->customer_email }}</small>
+                                                    {{ $reservation->customer_name }}<br>
+                                                    <small>{{ $reservation->customer_email }}</small>
                                                 </td>
-                                                <td>{{ $res->customer_phone }}</td>
-                                                <td>{{ $res->guest_count }}</td>
-                                                <td>{{ $res->reservation_time }}</td>
-                                                <td>{{ $res->deposit }}</td>
+                                                <td>{{ $reservation->customer_phone }}</td>
+                                                <td>{{ $reservation->guest_count }}</td>
+                                                <td>{{ $reservation->reservation_time }}</td>
+                                                <td>{{ number_format($reservation->deposit, 0, ',', '.') }} VND</td>
                                                 <td>
+                                                    {{ number_format(array_sum(array_column($cart, 'total')), 0, ',', '.') }}
+                                                    VND
+                                                </td>
+                                                <td>
+                                                    <!-- Hiển thị trạng thái -->
                                                     <span
                                                         class="badge
-                                                                    @if ($res->status == 'Chưa thanh toán cọc') bg-warning
-                                                                    @elseif ($res->status == 'Đã thanh toán cọc') bg-primary
-                                                                    @elseif ($res->status == 'Đã hủy') bg-danger @endif
-                                                                "
-                                                        style="font-size: 14px">
-                                                        {{ $res->status }}
+                                                            @if ($reservation->status == 'Đã thanh toán') bg-primary @endif
+                                                            "
+                                                        style="font-size: 14px;">
+                                                        {{ $reservation->status }}
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    {{-- Chi tiết --}}
-                                                    <a href="{{ route('admin.table.show', $res->id) }}"
-                                                        class="btn btn-primary btn-sm"><i class="ion ion-eye"></i> </a>
-                                                    <a href="{{ route('admin.table.edit', $res->id) }}"
-                                                        class="btn btn-warning btn-sm">
-                                                        <i class="ion ion-edit"></i>
-                                                    </a>
+                                                    <!-- Chi tiết -->
+                                                    <form action="{{ route('admin.invoices.show', $reservation->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-success btn-sm mx-2 my-2">
+                                                            <i class="ion ion-eye"></i>
+                                                        </button>
+                                                    </form>
                                                     {{-- Xóa --}}
                                                     <form method="POST"
-                                                        action="{{ route('admin.table.destroy', $res->id) }}"
-                                                        style="display:inline-block;"
+                                                        action="{{ route('admin.invoices.destroy', $reservation->id) }}"
                                                         onsubmit="return confirm('Bạn có chắc chắn muốn xóa đặt bàn này không?');">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm"><i
+                                                        <button type="submit" class="btn btn-danger btn-sm mx-2 my-"><i
                                                                 class="ion ion-trash-a"></i></button>
                                                     </form>
                                                 </td>
@@ -86,6 +90,7 @@
                             </div>
                         </div>
                         <!-- /.card-body -->
+
                     </div>
                     <!-- /.card -->
                 </div>

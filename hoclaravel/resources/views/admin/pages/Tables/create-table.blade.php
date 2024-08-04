@@ -1,152 +1,104 @@
 @extends('admin.layouts.masterlayout')
-@section('title', 'Đặt Bàn')
+@section('title', 'Thêm Bàn')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <!-- left column -->
                 <div class="col-md-12">
-                    <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Thêm Bàn</h3>
                         </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.table.store') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tên khách</label>
-                                            <input type="text" name="customer_name" class="form-control"
-                                                placeholder="Nhập tên khách" value="">
+                                            <input type="text" name="customer_name"
+                                                class="form-control @error('customer_name') is-invalid @enderror"
+                                                placeholder="Nhập tên khách" value="{{ old('customer_name') }}">
+                                            @error('customer_name')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="customer_email" class="form-control"
-                                                placeholder="Nhập email" value="">
+                                            <input type="email" name="customer_email"
+                                                class="form-control @error('customer_email') is-invalid @enderror"
+                                                placeholder="Nhập email" value="{{ old('customer_email') }}">
+                                            @error('customer_email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Số điện thoại</label>
-                                            <input type="text" name="customer_phone" class="form-control"
-                                                placeholder="Nhập số điện thoại" value="">
+                                            <input type="text" name="customer_phone"
+                                                class="form-control @error('customer_phone') is-invalid @enderror"
+                                                placeholder="Nhập số điện thoại" value="{{ old('customer_phone') }}">
+                                            @error('customer_phone')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Số người</label>
-                                            <input type="number" name="guest_count" class="form-control"
-                                                placeholder="Nhập số người" value="">
+                                            <input type="number" name="guest_count"
+                                                class="form-control @error('guest_count') is-invalid @enderror"
+                                                placeholder="Nhập số người" value="{{ old('guest_count') }}" min="0">
+                                            @error('guest_count')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Ngày giờ</label>
-                                            <input type="datetime-local" name="reservation_time" class="form-control"
-                                                placeholder="Nhập ngày giờ" value="">
+                                            <input type="datetime-local" name="reservation_time"
+                                                class="form-control @error('reservation_time') is-invalid @enderror"
+                                                placeholder="Nhập ngày giờ" value="{{ old('reservation_time') }}">
+                                            @error('reservation_time')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Trạng thái</label>
-                                            <select name="status" class="form-control">
-                                                <option value="Chưa thanh toán cọc">Chưa thanh toán cọc</option>
-                                                <option value="Chưa xác nhận">Chưa xác nhận</option>
-                                                <option value="Đã xác nhận">Đã xác nhận</option>
-                                                <option value="Đã thanh toán">Đã thanh toán</option>
-                                                <option value="Đã hủy">Đã hủy</option>
+                                            <select name="status"
+                                                class="form-control @error('status') is-invalid @enderror">
+                                                <option value="Chưa thanh toán cọc"
+                                                    {{ old('status') == 'Chưa thanh toán cọc' ? 'selected' : '' }}>
+                                                    Chưa thanh toán cọc
+                                                </option>
+                                                <option value="Đã thanh toán cọc"
+                                                    {{ old('status') == 'Đã thanh toán cọc' ? 'selected' : '' }}>
+                                                    Đã thanh toán cọc
+                                                </option>
+                                                <option value="Đã hủy" {{ old('status') == 'Đã hủy' ? 'selected' : '' }}>
+                                                    Đã hủy
+                                                </option>
                                             </select>
+                                            @error('status')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group pt-3">
                                             <label>Tiền đã cọc</label>
-                                            <input type="number" name="deposit" class="form-control"
+                                            <input type="number" name="deposit"
+                                                class="form-control @error('deposit') is-invalid @enderror"
                                                 placeholder="Nhập số tiền đã cọc" min="0" step="1000"
-                                                value="">
+                                                value="{{ old('deposit') }}">
+                                            @error('deposit')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Danh sách món ăn</label>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Danh mục</th>
-                                                        <th>Món ăn</th>
-                                                        <th>Giá</th>
-                                                        <th>Số lượng</th>
-                                                        <th>Tổng tiền</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <!-- Mẫu cho danh mục và món ăn -->
-                                                    {{-- @foreach ($categories as $category) --}}
-                                                    <tr>
-                                                        <td rowspan="3">Danh mục 1</td>
-                                                        <!-- Giả sử danh mục có 3 món ăn -->
-                                                        <td>
-                                                            <select name="food_ids[]" class="form-control">
-                                                                <option value="1">Món ăn 1</option>
-                                                                <option value="2">Món ăn 2</option>
-                                                                <option value="3">Món ăn 3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><input type="text" name="food_prices[]" class="form-control"
-                                                                value="50,000 VND" readonly></td>
-                                                        <td><input type="number" name="food_quantities[]"
-                                                                class="form-control" value="1"></td>
-                                                        <td><input type="text" name="food_totals[]" class="form-control"
-                                                                value="50,000 VND" readonly></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <select name="food_ids[]" class="form-control">
-                                                                <option value="1">Món ăn 1</option>
-                                                                <option value="2">Món ăn 2</option>
-                                                                <option value="3">Món ăn 3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><input type="text" name="food_prices[]" class="form-control"
-                                                                value="60,000 VND" readonly></td>
-                                                        <td><input type="number" name="food_quantities[]"
-                                                                class="form-control" value="1"></td>
-                                                        <td><input type="text" name="food_totals[]" class="form-control"
-                                                                value="60,000 VND" readonly></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <select name="food_ids[]" class="form-control">
-                                                                <option value="1">Món ăn 1</option>
-                                                                <option value="2">Món ăn 2</option>
-                                                                <option value="3">Món ăn 3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><input type="text" name="food_prices[]"
-                                                                class="form-control" value="70,000 VND" readonly></td>
-                                                        <td><input type="number" name="food_quantities[]"
-                                                                class="form-control" value="1"></td>
-                                                        <td><input type="text" name="food_totals[]"
-                                                                class="form-control" value="70,000 VND" readonly></td>
-                                                    </tr>
-                                                    {{-- @endforeach --}}
-                                                    <tr>
-                                                        <td colspan="4" class="text-right"><strong>Tổng cộng:</strong>
-                                                        </td>
-                                                        <td><input type="text" name="total_amount"
-                                                                class="form-control" value="180,000 VND" readonly></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-                            <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                             </div>
                         </form>
                     </div>
-                    <!-- /.card -->
                 </div>
             </div>
         </div>
