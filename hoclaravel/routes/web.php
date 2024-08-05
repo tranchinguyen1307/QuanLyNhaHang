@@ -9,7 +9,11 @@ use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckEmployeeRole;
+use App\Http\Middleware\CheckAdmin;
+
 
 // /client
 Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
@@ -20,7 +24,10 @@ Route::prefix('client')->name('client.')->group(function () {
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::get('admin/login', [EmployeesHomeController::class, 'showLoginForm'])->name('admin.login.form');
+Route::post('admin/login', [EmployeesHomeController::class, 'login'])->name('admin.login');
+Route::get('admin/logout', [EmployeesHomeController::class, 'logout'])->name('admin.logout');
+Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(function () {
     // menu
     Route::prefix('menu')->name('menu.')->group(function () {
         Route::get('/', [AdminHomeController::class, 'index'])->name('index');
@@ -36,14 +43,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 
     // Employees 
-    Route::prefix('employees')->name('employees.')->group(function () {
+    Route::prefix('employees')->middleware([CheckEmployeeRole::class . ':1'])->name('employees.')->group(function () {
         Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
         Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
         Route::get('/edit/{id}', [EmployeesHomeController::class, 'edit'])->name('edit');
-        Route::patch('/update/{id}',[EmployeesHomeController::class,'update'])->name('update');
+        Route::patch('/update/{id}', [EmployeesHomeController::class, 'update'])->name('update');
         Route::post('/store', [EmployeesHomeController::class, 'store'])->name('store');
         Route::delete('/destroy/{id}', [EmployeesHomeController::class, 'destroy'])->name('destroy');
-
     });
 
     // Customer
@@ -61,17 +67,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-    
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Middleware for authentication and verification
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/', function () {
-//         return view('client.pages.home');
-//     })->name('/trang-chu');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';

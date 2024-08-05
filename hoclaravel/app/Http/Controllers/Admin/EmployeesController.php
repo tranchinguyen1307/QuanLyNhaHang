@@ -8,6 +8,9 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Employee\StoreEmployeeRequest;
 use App\Http\Requests\Admin\Employee\UpdateEmployeeRequest;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Auth\LoginRequest;
 
 class EmployeesController extends Controller
 {
@@ -56,10 +59,14 @@ class EmployeesController extends Controller
     public function store(StoreEmployeeRequest $request)
     {
         $validatedData = $request->validated();
+        if ($request->has('password')) {
+            $validatedData['password'] = Hash::make($request->input('password'));
+        }
         $validatedData['img'] = $request->input('img');
         $employee = Employee::create($validatedData);
         return redirect()->route('admin.employees.index')->with('success', 'Thêm nhân viên thành công.');
     }
+
 
 
     public function destroy($id)
@@ -67,5 +74,39 @@ class EmployeesController extends Controller
         $employee = Employee::findOrFail($id);
         $employee->delete();
         return redirect()->route('admin.employees.index')->with('success', 'Xóa nhân viên thành công.');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.admin-login');
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('employee')->attempt($credentials)) {
+
+            $request->session()->regenerate();
+
+            return redirect()->intended('admin/employees'); 
+        }
+
+        // Đăng nhập thất bại
+        return back()->withErrors([
+            'email' => 'Email hoặc mật khẩu không chính xác',
+            'password' => 'Email hoặc mật khẩu không chính xác',
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('employee')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/admin/login');
     }
 }

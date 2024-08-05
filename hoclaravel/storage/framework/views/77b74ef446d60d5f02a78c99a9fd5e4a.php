@@ -4,7 +4,7 @@
     <a href="index3.html" class="brand-link">
         <img src="<?php echo e(asset('assets/dist/img/AdminLTELogo.png')); ?>" class="brand-image img-circle elevation-3"
             alt="User Image" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">3 anh đầu bếp</span>
     </a>
 
     <!-- Sidebar -->
@@ -12,16 +12,14 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?php echo e(asset('assets/dist/img/user2-160x160.jpg')); ?>" class="img-circle elevation-2"
+                <img src="<?php echo e(asset('storage/images/employees/' . $inforEmployee->img)); ?>" class="img-circle elevation-2"
                     alt="User Image">
             </div>
 
             <div class="info">
-                <a href="#" class="d-block">Toàn</a>
+                <a href="#" class="d-block"><?php echo e($inforEmployee->username); ?></a>
             </div>
-
-
-            <div class= "ml-5 mt-1"><a href="/logout">Đăng xuất</a></div>
+            <div class= "ml-5 mt-1"><a href="<?php echo e(route('admin.logout')); ?>">Đăng xuất</a></div>
 
         </div>
 
