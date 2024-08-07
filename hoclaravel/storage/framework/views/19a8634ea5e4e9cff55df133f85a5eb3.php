@@ -72,4 +72,5 @@
 <?php unset($__componentOriginalb8e9be121ac5809d76d4768b3abc0902); ?>
 <?php endif; ?>
 <?php echo $__env->yieldPushContent('scripts'); ?>
+
 <?php /**PATH D:\FPT Polytechnic\Php3\QuanLyNhaHang\hoclaravel\resources\views/admin/layouts/masterlayout.blade.php ENDPATH**/ ?>

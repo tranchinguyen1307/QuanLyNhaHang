@@ -27,7 +27,7 @@ class UpdateEmployeeRequest extends FormRequest
             'email' => 'required|email|unique:employees,email,' .$employeeId,
             'salary' => 'required|numeric|min:0', 
             'username' => 'required|string|max:255|unique:employees,username,'.$employeeId,
-            'password' => 'required|string|min:8', 
+            'password' => 'nullable|string|min:8|max:12', 
             'role_id' => 'required|exists:roles,id',
             'created_at' => 'required|date', 
             'address' => 'required|string|max:255', 
@@ -47,8 +47,8 @@ class UpdateEmployeeRequest extends FormRequest
             'salary.min' => 'Lương không thể âm.',
             'username.required' => 'Tên đăng nhập là bắt buộc.',
             'username.unique' => 'Tên đăng nhập đã tồn tại.',
-            'password.required' => 'Mật khẩu là bắt buộc.',
             'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự.',
+            'password.max' => 'Mật khẩu tối đa 12 ký tự.',
             'role_id.required' => 'Chức vụ là bắt buộc.',
             'role_id.exists' => 'Chức vụ không hợp lệ.',
             'created_at.required' => 'Ngày vào làm là bắt buộc.',
@@ -86,7 +86,7 @@ class UpdateEmployeeRequest extends FormRequest
         }
         else {
             $employeeId = $this->route('id');
-            $employee = \App\Models\Employee::findOrFail($employeeId);
+            $employee = \App\Models\Admin\Employee::findOrFail($employeeId);
             $this->merge([
                 'img' => $employee->img,
             ]);

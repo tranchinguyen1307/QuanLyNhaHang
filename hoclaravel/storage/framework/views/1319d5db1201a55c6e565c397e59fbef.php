@@ -72,7 +72,8 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
                                 <label>Mật khẩu</label>
-                                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" value="<?php echo e($employee->password); ?>">
+                                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
+                                <input type="hidden" name="old_password" value="<?php echo e($employee->password); ?>">
                                 <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -101,6 +102,13 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="role_id">Trạng thái</label>
+                                <select name="status" id="status" class="form-control">
+                                        <option value="1" <?php echo e($employee->status == 1 ? 'selected' : ''); ?>>Đang làm</option>
+                                        <option value="2" <?php echo e($employee->status == 2 ? 'selected' : ''); ?>>Đã nghỉ</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Ngày vào làm</label>

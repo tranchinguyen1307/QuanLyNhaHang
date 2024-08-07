@@ -45,7 +45,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Mật khẩu</label>
-                                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" value="{{ $employee->password }}">
+                                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
+                                <input type="hidden" name="old_password" value="{{ $employee->password }}">
                                 @error('password')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -60,6 +61,13 @@
                                 @error('role_id')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="role_id">Trạng thái</label>
+                                <select name="status" id="status" class="form-control">
+                                        <option value="1" {{ $employee->status == 1 ? 'selected' : '' }}>Đang làm</option>
+                                        <option value="2" {{ $employee->status == 2 ? 'selected' : '' }}>Đã nghỉ</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Ngày vào làm</label>

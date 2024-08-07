@@ -12,15 +12,12 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
+                                <table class="table table-hover text-nowrap table-bordered">
                                     <thead>
                                         <tr>
                                             <th>STT</th>
-                                            <th>Họ và Tên</th>
+                                            <th>Thông Tin Cơ Bản</th>
                                             <th>Hình ảnh</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Email</th>
-                                            <th>Chức vụ</th>
                                             <th>Lương</th>
                                             <th>Trạng thái</th>
                                             <th>Ngày vào làm</th>
@@ -38,20 +35,22 @@
                                             ?>
                                             <tr>
                                                 <td><?php echo e($stt); ?></td>
-                                                <td><?php echo e($employee->name); ?></td>
-                                                <td><img src="<?php echo e(asset('storage/images/employees/' . $employee->img)); ?>" class="img-fluid"
-                                                    style="width: 150px; height: 150px;" alt="Đang cập nhật"></td>
-                                                <td class="text-wrap"><?php echo e($employee->address); ?></td>
-                                                <td><?php echo e($employee->email); ?></td>
-                                                <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php if($employee->role_id == $role->id): ?>
-                                                        <td><?php echo e($role->name); ?></td>
-                                                    <?php endif; ?>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                <td><b>
-                                                        <p class="text-danger">
-                                                            <?php echo e(number_format($employee->salary, 0, ',', ',')); ?> VNĐ</p>
-                                                    </b></td>
+                                                <td>
+                                                    <strong><?php echo e($employee->name); ?></strong><br>
+                                                    Email: <?php echo e($employee->email); ?><br>
+                                                    Địa chỉ: <?php echo e($employee->address); ?><br>
+                                                    Số điện thoại: <?php echo e($employee->phone); ?>
+
+                                                </td>
+                                                <td>
+                                                    <img src="<?php echo e(asset('storage/images/employees/' . $employee->img)); ?>" class="img-fluid rounded"
+                                                        style="width: 100px; height: 100px;" alt="Hình ảnh nhân viên">
+                                                </td>
+                                                <td>
+                                                    <p class="text-danger">
+                                                        <?php echo e(number_format($employee->salary, 0, ',', ',')); ?> VNĐ
+                                                    </p>
+                                                </td>
                                                 <td>
                                                     <?php if($employee->status == 1): ?>
                                                         <h5><span class="badge badge-success badge-lg">Đang làm</span></h5>
@@ -59,28 +58,24 @@
                                                         <h5><span class="badge badge-danger">Nghỉ</span></h5>
                                                     <?php endif; ?>
                                                 </td>
-                                                <td><b><?php echo e(\Carbon\Carbon::parse($employee->created_at)->format('d/m/Y')); ?></b>
-                                                </td>
-                                                <td class="d-flex">
-                                                    <a class="btn btn-primary mr-2" href="<?php echo e(route('admin.employees.edit', $employee->id)); ?>"><i
-                                                            class="fas fa-edit"></i></a>
-                                                    <form method="post"
-                                                        action="<?php echo e(route('admin.employees.destroy', $employee->id)); ?>"
-                                                        onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?')">
-                                                        <?php echo csrf_field(); ?>
-                                                        <?php echo method_field('DELETE'); ?>
-                                                        <button type="submit" class="btn btn-danger"><i
-                                                                class="fas fa-trash-alt"></i></button>
-                                                    </form>
+                                                <td><b><?php echo e(\Carbon\Carbon::parse($employee->created_at)->format('d/m/Y')); ?></b></td>
+                                                <td class="actions-column">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-primary mr-2" href="<?php echo e(route('admin.employees.edit', $employee->id)); ?>" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                                        <form method="post" action="<?php echo e(route('admin.employees.destroy', $employee->id)); ?>" onsubmit="return confirm('Bạn có chắc chắn muốn xóa khách hàng này?')">
+                                                            <?php echo csrf_field(); ?>
+                                                            <?php echo method_field('DELETE'); ?>
+                                                            <button type="submit" class="btn btn-danger" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                                                        </form>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
-                                <ul class="pagination pagination-primary mt-3">
-                                    <li class="page-item"><a class="page-link" href="">Previous</a></li>
-                                    <li class="page-item active ml-2"><a class="page-link" href="">1</a></li>
-                                    <li class="page-item ml-2"><a class="page-link" href="">Next</a></li>
+                                <ul class="pagination pagination-primary mt-3 justify-content-center">
+                                    <?php echo e($employees->links()); ?>
+
                                 </ul>
                             </div>
                             <!-- /.card-body -->
@@ -93,8 +88,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content text-dark">
                 <div class="modal-header bg-success">
@@ -104,7 +98,6 @@
                     </button>
                 </div>
                 <div class="modal-body d-flex align-items-center">
-                    <i class="fas fa-check-circle me-2"></i>
                     <div class="">
                         <?php echo e(session('success')); ?>
 

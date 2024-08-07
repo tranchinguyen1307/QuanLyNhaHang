@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Employee;
+use App\Models\Admin\Employee;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Employee\StoreEmployeeRequest;
@@ -17,7 +17,7 @@ class EmployeesController extends Controller
     public function index()
     {
 
-        $employees = Employee::orderBy('id', 'asc')->get();
+        $employees = Employee::orderBy('id', 'asc')->paginate(5);
         $roles = Role::all();
         return view('admin.Modules.Employees.employees', [
             'employees' => $employees,
@@ -49,6 +49,12 @@ class EmployeesController extends Controller
     {
         $validatedData = $request->validated();
         $validatedData['img'] = $request->input('img');
+        $validatedData['status'] = $request->input('status');
+        if ($request->filled('password')) {
+            $validatedData['password'] = Hash::make($request->input('password'));
+        } else {
+            $validatedData['password'] = $request->input('old_password');
+        }
         $employee = Employee::findOrFail($id);
         $employee->update($validatedData);
 
@@ -89,7 +95,7 @@ class EmployeesController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended('admin/employees'); 
+            return redirect()->intended('admin/customer'); 
         }
 
         // Đăng nhập thất bại

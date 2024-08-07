@@ -1,6 +1,6 @@
 @extends('admin.layouts.masterlayout')
 
-@section('title', 'Nhân Viên')
+@section('title', 'Khách Hàng')
 
 @section('content')
     <div class="wrapper">
@@ -10,20 +10,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Danh sách Nhân Viên</h3>
+                                <h3 class="card-title">Danh sách Khách Hàng</h3>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap table-bordered">
-                                    <thead>
+                            <div class="card-body table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-light">
                                         <tr>
-                                            <th>STT</th>
-                                            <th>Thông Tin Cơ Bản</th>
-                                            <th>Hình ảnh</th>
-                                            <th>Lương</th>
-                                            <th>Trạng thái</th>
-                                            <th>Ngày vào làm</th>
-                                            <th>Thao tác</th>
+                                            <th style="width: 5%;">STT</th>
+                                            <th style="width: 55%;">Thông Tin Cơ Bản</th>
+                                            <th style="width: 40%;">Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,39 +27,22 @@
                                             $stt = 0;
                                         @endphp
 
-                                        @foreach ($employees as $employee)
+                                        @foreach ($customers as $customer)
                                             @php
                                                 $stt++;
                                             @endphp
                                             <tr>
                                                 <td>{{ $stt }}</td>
                                                 <td>
-                                                    <strong>{{ $employee->name }}</strong><br>
-                                                    Email: {{ $employee->email }}<br>
-                                                    Địa chỉ: {{ $employee->address }}<br>
-                                                    Số điện thoại: {{ $employee->phone }}
+                                                    <strong>{{ $customer->name }}</strong><br>
+                                                    <span>Email: {{ $customer->email }}</span><br>
+                                                    <span>Địa chỉ: {{ $customer->address }}</span><br>
+                                                    <span>Số điện thoại: {{ $customer->phone }}</span>
                                                 </td>
-                                                <td>
-                                                    <img src="{{ asset('storage/images/employees/' . $employee->img) }}" class="img-fluid rounded"
-                                                        style="width: 100px; height: 100px;" alt="Hình ảnh nhân viên">
-                                                </td>
-                                                <td>
-                                                    <p class="text-danger">
-                                                        {{ number_format($employee->salary, 0, ',', ',') }} VNĐ
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    @if ($employee->status == 1)
-                                                        <h5><span class="badge badge-success badge-lg">Đang làm</span></h5>
-                                                    @else
-                                                        <h5><span class="badge badge-danger">Nghỉ</span></h5>
-                                                    @endif
-                                                </td>
-                                                <td><b>{{ \Carbon\Carbon::parse($employee->created_at)->format('d/m/Y') }}</b></td>
                                                 <td class="actions-column">
                                                     <div class="btn-group">
-                                                        <a class="btn btn-primary mr-2" href="{{ route('admin.employees.edit', $employee->id) }}" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                                        <form method="post" action="{{ route('admin.employees.destroy', $employee->id) }}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa khách hàng này?')">
+                                                        <a class="btn btn-primary mr-2" href="{{ route('admin.customer.edit', $customer->id) }}" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                                        <form method="post" action="{{ route('admin.customer.destroy', $customer->id) }}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa khách hàng này?')">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger" title="Xóa"><i class="fas fa-trash-alt"></i></button>
@@ -74,8 +53,10 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <ul class="pagination pagination-primary mt-3 justify-content-center">
-                                    {{ $employees->links() }}
+                                <ul class="pagination pagination-primary mt-3">
+                                    <ul class="pagination pagination-primary mt-3 justify-content-center">
+                                        {{ $customers->links() }}
+                                    </ul>
                                 </ul>
                             </div>
                             <!-- /.card-body -->

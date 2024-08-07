@@ -19,19 +19,14 @@ class CheckEmployeeRole
      */
     public function handle(Request $request, Closure $next, $roleId)
     {
-        // Kiểm tra xác thực người dùng
-        if (!Auth::guard('employee')->check() && $request->is('admin/*')) {
-            return redirect('/admin/login');
-        }
-
-        // Nếu đã đăng nhập, kiểm tra quyền truy cập
+      
         $employee = Auth::guard('employee')->user();
         
         if ($employee->role_id == $roleId) {
             return $next($request);
         }
 
-        // Nếu không có quyền truy cập, trả về lỗi hoặc chuyển hướng
-        return response()->json(['message' => 'Forbidden'], 403);
+        
+        return redirect()->route('admin.customer.index')->with('error', 'Bạn không có quyền truy cập trang này');
     }
 }

@@ -14,8 +14,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
+            <x-input-label for="password" :value="__('Mật khẩu')" />
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
@@ -23,12 +22,10 @@
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
-
-
         <div class="flex items-center justify-end mt-4">
 
             <x-primary-button class="ms-3">
-                {{ __('Log in') }}
+                {{ __('Đăng nhập') }}
             </x-primary-button>
         </div>
     </form>
