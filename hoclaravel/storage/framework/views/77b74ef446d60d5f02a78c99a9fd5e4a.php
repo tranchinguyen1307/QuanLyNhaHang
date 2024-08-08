@@ -168,7 +168,10 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
 <style>
     .user-infor .avatar {
         width: 30px; /* Kích thước cố định của avatar */

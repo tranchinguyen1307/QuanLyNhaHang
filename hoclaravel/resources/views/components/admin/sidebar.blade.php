@@ -12,7 +12,16 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex user-infor">
             <div class="image">
+<<<<<<< HEAD
                 <img src="{{ asset('storage/images/employees/' . $inforEmployee->img) }}" class="img-fluid rounded-circle avatar" alt="User Image">
+=======
+<<<<<<< HEAD
+                <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                    alt="User Image">
+=======
+                <img src="{{ asset('storage/images/employees/' . $inforEmployee->img) }}" class="img-fluid rounded-circle avatar" alt="User Image">
+>>>>>>> 2f6ada3 (CRUD người dùng)
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ $inforEmployee->username }}</a>
@@ -186,7 +195,10 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
 <style>
     .user-infor .avatar {
         width: 30px; /* Kích thước cố định của avatar */

@@ -1243,7 +1243,11 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/3cd7593dd9b67002fc416b46616f4d4d1da3e571",
                 "reference": "3cd7593dd9b67002fc416b46616f4d4d1da3e571",
+<<<<<<< HEAD
 >>>>>>> c22445650e6bb0211aba8ea9460f9e0d3e71147a
+=======
+>>>>>>> 2f6ada3 (CRUD người dùng)
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                 "shasum": ""
             },
             "require": {
@@ -1440,7 +1444,11 @@
             "time": "2024-07-26T10:39:29+00:00"
 =======
             "time": "2024-08-06T14:39:21+00:00"
+<<<<<<< HEAD
 >>>>>>> c22445650e6bb0211aba8ea9460f9e0d3e71147a
+=======
+>>>>>>> 2f6ada3 (CRUD người dùng)
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
         },
         {
             "name": "laravel/jetstream",
@@ -6504,6 +6512,7 @@
         },
         {
             "name": "laravel/pint",
+<<<<<<< HEAD
             "version": "v1.17.0",
 =======
 >>>>>>> c22445650e6bb0211aba8ea9460f9e0d3e71147a
@@ -6574,6 +6583,16 @@
             },
             "dist": {
                 "type": "zip",
+=======
+            "version": "v1.17.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                 "url": "https://api.github.com/repos/laravel/pint/zipball/e8a88130a25e3f9d4d5785e6a1afca98268ab110",
                 "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110",
                 "shasum": ""

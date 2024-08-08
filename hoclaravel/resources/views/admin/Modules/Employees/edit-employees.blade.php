@@ -4,6 +4,18 @@
 
 <section class="content">
     <div class="container-fluid">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- jquery validation -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Sửa Nhân viên</h3>
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary">
@@ -30,6 +42,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label>Số điện thoại</label>
                                 <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="{{ old('phone', $employee->phone) }}">
                                 @error('phone')
@@ -37,6 +50,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="{{ old('salary', $employee->salary) }}">
                                 @error('salary')
@@ -107,6 +122,10 @@
                         @endforeach
                     </form>
                 </div>
+<<<<<<< HEAD
+=======
+>>>>>>> 2f6ada3 (CRUD người dùng)
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
             </div>
         </div>
     </div>

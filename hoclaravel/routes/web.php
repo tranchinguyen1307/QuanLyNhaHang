@@ -87,7 +87,10 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
     Route::prefix('customer')->name('customer.')->group(function () {
         Route::get('/', [CustomerHomeController::class, 'index'])->name('index');
         Route::get('/create', [CustomerHomeController::class, 'create'])->name('create');
-        Route::get('/edit', [CustomerHomeController::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [CustomerHomeController::class, 'edit'])->name('edit');
+        Route::post('/store', [CustomerHomeController::class, 'store'])->name('store');
+        Route::delete('/destroy/{id}', [CustomerHomeController::class, 'destroy'])->name('destroy');
+        Route::patch('/update/{id}', [CustomerHomeController::class, 'update'])->name('update');
     });
 
     // categoris
