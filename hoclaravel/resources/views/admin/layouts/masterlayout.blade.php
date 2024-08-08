@@ -14,3 +14,8 @@
 @yield('content')
 </div>
 <x-admin.footer />
+<<<<<<< HEAD
+=======
+@stack('scripts')
+
+>>>>>>> 2f6ada3 (CRUD người dùng)

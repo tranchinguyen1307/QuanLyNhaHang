@@ -62,7 +62,15 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+<<<<<<< HEAD
             'model' => env('AUTH_MODEL', App\Models\User::class),
+=======
+            'model' => App\Models\User::class,
+        ],
+        'employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin\Employee::class,
+>>>>>>> 2f6ada3 (CRUD người dùng)
         ],
 
         // 'users' => [
