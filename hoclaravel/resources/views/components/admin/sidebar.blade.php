@@ -167,12 +167,11 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-</aside>
-
+</aside>z
 <style>
     .user-infor .avatar {
-        width: 30px; /* Kích thước cố định của avatar */
-        height: 30px; /* Kích thước cố định của avatar */
-        object-fit: cover; /* Giúp hình ảnh không bị méo */
+        width: 30px; 
+        height: 30px; 
+        object-fit: cover;
     }
 </style>
