@@ -9,16 +9,16 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.category');
+        return view('admin.modules.category');
     }
 
     public function create()
     {
-        return view('admin.pages.create-category');
+        return view('admin.modules.create-category');
     }
 
     public function edit()
     {
-        return view('admin.pages.edit-category');
+        return view('admin.modules.edit-category');
     }
 }

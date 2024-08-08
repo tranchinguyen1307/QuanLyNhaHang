@@ -51,8 +51,8 @@
         <!--/.col (left) -->
         <!-- right column -->
         <div class="col-md-6">
-
+z
         </div>
         <!--/.col (right) -->
-      
+
 @endsection

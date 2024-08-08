@@ -4,24 +4,20 @@
     <a href="index3.html" class="brand-link">
         <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" class="brand-image img-circle elevation-3"
             alt="User Image" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">3 anh đầu bếp</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex user-infor">
             <div class="image">
-                <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="{{ asset('storage/images/employees/' . $inforEmployee->img) }}" class="img-fluid rounded-circle avatar" alt="User Image">
             </div>
-
             <div class="info">
-                <a href="#" class="d-block">Toàn</a>
+                <a href="#" class="d-block">{{ $inforEmployee->username }}</a>
             </div>
-
-
-            <div class= "ml-5 mt-1"><a href="/logout">Đăng xuất</a></div>
+            <div class= "ml-5 mt-1"><a href="{{ route('admin.logout') }}">Đăng xuất</a></div>
 
         </div>
 
@@ -190,3 +186,11 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+<style>
+    .user-infor .avatar {
+        width: 30px; /* Kích thước cố định của avatar */
+        height: 30px; /* Kích thước cố định của avatar */
+        object-fit: cover; /* Giúp hình ảnh không bị méo */
+    }
+</style>

@@ -40,12 +40,9 @@
                 </a>
             @endif
 
-            <x-primary-button class="mx-3">
+            <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
-            <a href="{{ route('register') }}" class="btn btn-secondary">
-                {{ __('Register') }}
-            </a>
         </div>
     </form>
 </x-guest-layout>
