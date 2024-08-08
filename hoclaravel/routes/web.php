@@ -20,6 +20,9 @@ Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
 Route::prefix('client')->name('client.')->group(function () {
     Route::get('/san-pham', [ProductController::class, 'index'])->name('san-pham.index');
     Route::get('/dat-ban', [ClientBookTableController::class, 'index'])->name('dat-ban.index');
+    Route::post('/dat-ban', [ClientBookTableController::class, 'store'])->name('dat-ban.store');
+    Route::get('/dat-ban/thanh-toan', [ClientBookTableController::class, 'payment'])->name('reservations.payment');
+    Route::post('/dat-ban/hoan-tat', [ClientBookTableController::class, 'complete'])->name('reservations.complete');
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
 });
 
@@ -85,8 +88,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
+// dang nhap de dat bàn
+Route::middleware(['auth'])->group(function () {
+    Route::get('/client/dat-ban', [ClientBookTableController::class, 'index'])->name('client.dat-ban.index');
+});
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('client.pages.home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

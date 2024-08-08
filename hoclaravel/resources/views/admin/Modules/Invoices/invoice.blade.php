@@ -51,7 +51,7 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Ghi chú:</strong></td>
-                                            <td>{{ $reservation->description }}</td>
+                                            <td>{{ $reservation->note ?? 'Không có' }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Tiền cọc:</strong></td>

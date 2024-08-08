@@ -24,7 +24,7 @@ class InvoiceController extends Controller
             return $reservation;
         });
 
-        return view('admin.pages.Invoices.list', compact('reservationsWithTotal', 'cart'));
+        return view('admin.Modules.Invoices.list', compact('reservationsWithTotal', 'cart'));
     }
 
     public function updatePaymentStatus(Request $request, $id)
@@ -36,7 +36,7 @@ class InvoiceController extends Controller
         session()->flash('success', 'Thanh toán thành công!');
         $cart = session('cart', []);
 
-        return view('admin.pages.Invoices.invoice', compact('reservation', 'cart'));
+        return view('admin.Modules.Invoices.invoice', compact('reservation', 'cart'));
     }
 
     public function destroy($id)

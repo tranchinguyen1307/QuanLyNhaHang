@@ -37,7 +37,7 @@
                                         <td>{{ $reservation->guest_count }}</td>
                                         <td>{{ $reservation->reservation_time }}</td>
                                         <td>
-                                            <p>{{ $reservation->description }}</p>
+                                            <p>{{ $reservation->note }}</p>
                                         </td>
                                     </tr>
                                 </tbody>

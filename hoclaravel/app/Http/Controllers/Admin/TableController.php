@@ -17,14 +17,14 @@ class TableController extends Controller
 
         $reservation = Reservation::where('status', '!=', 'Đã thanh toán')->get();
 
-        return view('admin.pages.Tables.table', compact('reservation'));
+        return view('admin.Modules.Tables.table', compact('reservation'));
     }
 
     public function create()
     {
         $reservation = Reservation::all();
 
-        return view('admin.pages.Tables.create-table', compact('reservation'));
+        return view('admin.Modules.Tables.create-table', compact('reservation'));
     }
 
     public function store(StorePostRequest $request)
@@ -42,19 +42,17 @@ class TableController extends Controller
         $reservation = Reservation::findOrFail($id);
         $products = Product::all();
 
-        return view('admin.pages.Tables.edit-table', compact('reservation', 'products'));
+        return view('admin.Modules.Tables.edit-table', compact('reservation', 'products'));
     }
 
     public function update(StorePostRequest $request, $id)
     {
-        // Lấy dữ liệu đã xác thực từ request
+
         $validatedData = $request->validated();
 
-        // Tìm đặt bàn theo id và cập nhật dữ liệu
         $reservation = Reservation::findOrFail($id);
         $reservation->update($validatedData);
 
-        // Chuyển hướng về trang chỉnh sửa với thông báo thành công
         return redirect()->route('admin.table.index', $id)->with('success', 'Thông tin bàn đã được cập nhật thành công.');
     }
 
@@ -62,7 +60,7 @@ class TableController extends Controller
     {
         $reservation = Reservation::all();
 
-        return view('admin.pages.Tables.table_manager', compact('reservation'));
+        return view('admin.Modules.Tables.table_manager', compact('reservation'));
     }
 
     public function show($id)
@@ -72,7 +70,7 @@ class TableController extends Controller
 
         $products = Product::all();
 
-        return view('admin.pages.Tables.table_manager', compact('reservation', 'products'));
+        return view('admin.Modules.Tables.table_manager', compact('reservation', 'products'));
     }
 
     public function checkout($id)
@@ -82,7 +80,7 @@ class TableController extends Controller
 
         $cart = Session::get('cart', []);
 
-        return view('admin.pages.Tables.check_out', compact('reservation', 'cart'));
+        return view('admin.Modules.Tables.check_out', compact('reservation', 'cart'));
     }
 
     public function updateStatus(Request $request, $id)
@@ -158,6 +156,6 @@ class TableController extends Controller
         session()->flash('success', 'Thanh toán thành công!');
         $cart = session('cart', []);
 
-        return view('admin.pages.Invoices.invoice', compact('reservation', 'cart'));
+        return view('admin.Modules.Invoices.invoice', compact('reservation', 'cart'));
     }
 }

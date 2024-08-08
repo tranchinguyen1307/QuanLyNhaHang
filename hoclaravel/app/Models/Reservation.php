@@ -18,6 +18,7 @@ class Reservation extends Model
         'status',
         'deposit',
         'total_amount',
+        'note',
     ];
 
     public function items()

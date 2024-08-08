@@ -35,6 +35,7 @@
                                             <th>Thời gian</th>
                                             <th>Tiền cọc</th>
                                             <th>Trạng thái</th>
+                                            <th>Ghi chú</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
@@ -60,6 +61,7 @@
                                                         {{ $res->status }}
                                                     </span>
                                                 </td>
+                                                <td>{{ $res->note ?? 'Không có' }}</td>
                                                 <td>
                                                     {{-- Chi tiết --}}
                                                     <a href="{{ route('admin.table.show', $res->id) }}"

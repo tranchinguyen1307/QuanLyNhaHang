@@ -91,6 +91,14 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                        <div class="form-group pt-3">
+                                            <label>Ghi chú</label>
+                                            <textarea name="note" class="form-control @error('note') is-invalid @enderror" placeholder="Nhập ghi chú"
+                                                rows="3">{{ old('note') }}</textarea>
+                                            @error('note')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                             </div>

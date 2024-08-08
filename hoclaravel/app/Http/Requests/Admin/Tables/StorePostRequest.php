@@ -30,6 +30,7 @@ class StorePostRequest extends FormRequest
             'reservation_time' => 'required|date',
             'status' => 'required|string',
             'deposit' => 'required|numeric|min:0',
+            'note' => 'nullable|max:1000',
 
         ];
     }

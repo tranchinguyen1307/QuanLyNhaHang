@@ -99,6 +99,14 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                        <!-- Thêm trường ghi chú -->
+                                        <div class="form-group pt-3">
+                                            <label>Ghi chú</label>
+                                            <textarea name="note" class="form-control @error('note') is-invalid @enderror" placeholder="Nhập ghi chú">{{ old('note', $reservation->note) }}</textarea>
+                                            @error('note')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                             </div>
