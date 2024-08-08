@@ -1,5 +1,6 @@
 <x-admin.header />
 <x-admin.sidebar />
+<x-admin.navbar />
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">

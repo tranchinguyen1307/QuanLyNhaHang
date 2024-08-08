@@ -4,7 +4,11 @@
     <a href="index3.html" class="brand-link">
         <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" class="brand-image img-circle elevation-3"
             alt="User Image" style="opacity: .8">
+<<<<<<< HEAD
         <span class="brand-text font-weight-light">3 anh đầu bếp</span>
+=======
+        <span class="brand-text font-weight-light">Nhà Hàng NMN</span>
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
     </a>
 
     <!-- Sidebar -->

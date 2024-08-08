@@ -1,4 +1,5 @@
 @extends('admin.layouts.masterlayout')
+<<<<<<< HEAD
 
 @section('title', 'Nhân Viên')
 
@@ -34,6 +35,14 @@
 
 =======
 <<<<<<< HEAD
+=======
+@section('title', 'Nhân Viên')
+@section('content')
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
           <div class="container-fluid">
             <div class="row">
               <div class="col-12">
@@ -78,12 +87,17 @@
                       </tbody>
                     </table>
                     <ul class="pagination pagination-primary">
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
                   <li class="page-item"><a class="page-link" href="/admin?page=1">Previous</a></li>
                           <li class="page-item active ml-2"><a class="page-link" href="/admin?page=1">1</a></li>
                   <li class="page-item ml-2"><a class="page-link" href="/admin?page=1">Next</a></li>
               </ul>
                   </div>
+<<<<<<< HEAD
 =======
             <div class="container-fluid">
                 <div class="row">
@@ -201,6 +215,15 @@
         aria-hidden="true">
 =======
 <<<<<<< HEAD
+=======
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
                                         <li class="page-item"><a class="page-link" href="/admin?page=1">Previous</a></li>
                                         <li class="page-item active ml-2"><a class="page-link" href="/admin?page=1">1</a>
                                         </li>
@@ -209,6 +232,7 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 =======
     <!-- Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -248,3 +272,11 @@
         });
     </script>
 @endpush
+=======
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    @endsection
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78

@@ -1,7 +1,10 @@
 @extends('admin.layouts.masterlayout')
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
 @section('title','Khách Hàng')
 @section('content')
 <section class="content">
@@ -51,6 +54,7 @@
         <!--/.col (left) -->
         <!-- right column -->
         <div class="col-md-6">
+<<<<<<< HEAD
 >>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
 
 @section('title', 'Chỉnh sửa Khách Hàng')
@@ -204,4 +208,10 @@
 
 >>>>>>> 2f6ada3 (CRUD người dùng)
 >>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
+=======
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
 @endsection

@@ -23,7 +23,11 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="{{ asset('clients/img/team-2.jpg') }}" alt="Thành viên 2">
+<<<<<<< HEAD
                     </div>
+=======
+                    </div>    
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
                     <div class="d-flex justify-content-center mt-3">
@@ -36,9 +40,13 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
 
                         <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
 
+=======
+                        <img class="img-fluid" src="{{ asset('clients/img/team-3.jpg') }}" alt="Thành viên 3">
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
@@ -52,9 +60,13 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
+<<<<<<< HEAD
 
                         <img class="img-fluid" src="{{ asset('clients/img/team-4.jpg') }}" alt="Thành viên 4">
 
+=======
+                        <img class="img-fluid" src="{{ asset('clients/img/team-4.jpg') }}" alt="Thành viên 4">
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
