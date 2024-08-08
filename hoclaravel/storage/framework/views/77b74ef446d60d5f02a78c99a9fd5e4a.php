@@ -167,7 +167,9 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-</aside>z
+
+</aside>
+</aside>
 <style>
     .user-infor .avatar {
         width: 30px; 

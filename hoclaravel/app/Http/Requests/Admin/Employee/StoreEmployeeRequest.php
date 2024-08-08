@@ -24,19 +24,13 @@ class StoreEmployeeRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:employees,email',
-            'salary' => 'required|numeric|min:0', 
+            'salary' => 'required|numeric|min:0',
             'username' => 'required|string|max:255|unique:employees,username',
-            'password' => 'required|string|min:8|max:12', 
+            'password' => 'required|string|min:8|max:12',
             'role_id' => 'required|exists:roles,id',
-            'created_at' => 'required|date', 
-            'address' => 'required|string|max:255', 
+            'created_at' => 'required|date',
+            'address' => 'required|string|max:255',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'phone' => [
-                'required',
-                'numeric',
-                'digits_between:10,11',
-                'regex:/^0[1-9][0-9]{8,9}$/',
-            ],
         ];
     }
 
@@ -66,20 +60,14 @@ class StoreEmployeeRequest extends FormRequest
             'img.image' => 'Ảnh phải là một tệp hình ảnh.',
             'img.mimes' => 'Ảnh phải có định dạng: jpeg, png, jpg, gif, svg.',
             'img.max' => 'Ảnh không được lớn hơn 2MB.',
-            'phone.required' => 'Số điện thoại là bắt buộc.',
-            'phone.numeric' => 'Số điện thoại phải là số.',
-            'phone.digits_between' => 'Số điện thoại phải có từ 10 đến 11 chữ số.',
-            'phone.regex' => 'Số điện thoại phải bắt đầu bằng 0 và có từ 10 đến 11 chữ số.',
         ];
     }
-
-
 
     protected function passedValidation()
     {
         $this->handleImage();
     }
-    
+
     protected function handleImage()
     {
         if ($this->hasFile('img')) {
@@ -87,8 +75,8 @@ class StoreEmployeeRequest extends FormRequest
             $employeeName = $this->input('name');
             $normalEmployeeName = $employeeName;
             $normalEmployeeName = preg_replace('/[^A-Za-z0-9_]/', '_', $normalEmployeeName);
-            $timestamp = now()->timestamp; 
-            $extension = $file->getClientOriginalExtension(); 
+            $timestamp = now()->timestamp;
+            $extension = $file->getClientOriginalExtension();
             $fileName = "{$normalEmployeeName}_{$timestamp}.{$extension}";
             $filePath = $file->storeAs('public/images/employees', $fileName);
             $this->merge([

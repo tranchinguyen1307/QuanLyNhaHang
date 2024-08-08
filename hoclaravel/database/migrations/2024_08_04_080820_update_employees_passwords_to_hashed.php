@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Admin\Employee;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Employee;
+use Illuminate\Support\Facades\Schema;
 
 class UpdateEmployeesPasswordsToHashed extends Migration
 {

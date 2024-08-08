@@ -1,9 +1,29 @@
 @extends('admin.layouts.masterlayout')
+<<<<<<< HEAD
 @section('title', 'Sửa Nhân Viên')
 @section('content')
 
 <section class="content">
     <div class="container-fluid">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+@section('title','Nhân Viên')
+@section('content')
+<section class="content">
+    <div class="container-fluid">
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- jquery validation -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Sửa Nhân viên</h3>
+<<<<<<< HEAD
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary">
@@ -30,6 +50,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label>Số điện thoại</label>
                                 <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="{{ old('phone', $employee->phone) }}">
                                 @error('phone')
@@ -37,6 +58,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="{{ old('salary', $employee->salary) }}">
                                 @error('salary')
@@ -107,10 +130,14 @@
                         @endforeach
                     </form>
                 </div>
+<<<<<<< HEAD
+=======
+>>>>>>> 2f6ada3 (CRUD người dùng)
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
             </div>
         </div>
     </div>
-</section>   
+</section>
 
 @endsection
 
@@ -123,10 +150,68 @@
             reader.onload = function(e) {
                 const preview = document.getElementById('preview');
                 preview.src = e.target.result;
-                preview.classList.remove('d-none'); 
+                preview.classList.remove('d-none');
             }
             reader.readAsDataURL(file);
         }
     });
 </script>
 @endpush
+=======
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" enctype="multipart/form-data">
+              <div class="card-body">
+                <div class="form-group">
+                  <label >Tên nhân viên</label>
+                  <input type="text" name="title" class="form-control"  placeholder="Nhập họ và tên"  value="">
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="email" name="email" class="form-control"  placeholder="Nhập email"  value="">
+                </div>
+                <div class="form-group">
+                    <label >Số điện thoại</label>
+                    <input type="phone" name="phone" class="form-control"  placeholder="Nhập số điện thoại"  value="">
+                </div>
+                <div class="form-group">
+                    <label >Địa chỉ</label>
+                    <input type="text" name="address" class="form-control"  placeholder="Nhập địa chỉ"  value="">
+                </div>
+                <div class="form-group">
+                    <label >Ảnh</label>
+                    <input type="file" name="image" class="form-control pt-1 pl-0 "  >
+                  </div>
+                <div class="form-group">
+                    <label >Mật khẩu</label>
+                    <input type="password" name="pass" class="form-control"  placeholder="Nhập mật khẩu"  value="">
+                </div>
+                <div class="form-group pt-3">
+                    <label >Chức vụ</label>
+                    <select name="deposit" class ="ml-3" >
+                          <option  value="1">Đầu bếp</option>
+                          <option  value="2">Phục vụ</option>
+                          <option  value="3">Lễ tân</option>
+                          <option  value="4">Quản lý</option>
+                    </select>
+                </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Thêm</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+          </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+@endsection
+>>>>>>> d037bc0dc73296dc76ee26ec1c09e0cdbe586e78

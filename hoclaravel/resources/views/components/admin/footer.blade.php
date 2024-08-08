@@ -2,24 +2,24 @@
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0-rc
+        <b>Version</b> 3.2.0-rc
     </div>
-  </footer>
-  @stack('script')
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+</footer>
+@stack('script')
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  </div>
-  <!-- /wrpublic/assetser -->
-  <!-- jQuery -->
-  <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+</aside>
+<!-- /.control-sidebar -->
+</div>
+<!-- /wrpublic/assetser -->
+<!-- jQuery -->
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -41,20 +41,24 @@
 <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 <!-- AdminLTE -->
 <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
 <script>
-  $(function () {
-    // Summernote
-    $('#summernote').summernote()
+    $(function() {
+        // Summernote
+        $('#summernote').summernote()
 
-    
-    // CodeMirror
-    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-      mode: "htmlmixed",
-      theme: "monokai"
-    });
-  })
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
 </script>
-  </body>
-  </html>
+</body>
+
+</html>

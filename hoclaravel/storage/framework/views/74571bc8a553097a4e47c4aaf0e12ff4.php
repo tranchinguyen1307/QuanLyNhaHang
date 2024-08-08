@@ -33,7 +33,11 @@
                             <th>Minh Nhật</th>
                             <th>10/10/2024</th>
                             <td class = row>
+<<<<<<<< HEAD:hoclaravel/resources/views/admin/Modules/Customer/customers.blade.php
+                              <a class="btn btn-primary col-5" href="{{ route('admin.customer.edit') }}">Sửa</a>
+========
                               <a class="btn btn-primary col-5" href="<?php echo e(route('admin.customer.edit')); ?>">Sửa</a>
+>>>>>>>> c22445650e6bb0211aba8ea9460f9e0d3e71147a:hoclaravel/storage/framework/views/74571bc8a553097a4e47c4aaf0e12ff4.php
                               <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
                                   <input name="id" type="hidden" value="1">
                                   <button type ="submit" class = "btn btn-danger">Xóa</button>

@@ -43,6 +43,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label>Số điện thoại</label>
                                 <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="<?php echo e(old('phone', $employee->phone)); ?>">
                                 <?php $__errorArgs = ['phone'];
@@ -57,6 +58,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
+=======
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="<?php echo e(old('salary', $employee->salary)); ?>">
                                 <?php $__errorArgs = ['salary'];
@@ -179,7 +182,11 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </section>   
+=======
+</section>
+>>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
 
 <?php $__env->stopSection(); ?>
 

@@ -10,22 +10,22 @@
           <!-- jquery validation -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Sửa danh mục</h3>
+              <h3 class="card-title">Thêm danh mục</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" action="{{ route('admin.category.store') }}">
+              @csrf
+              @method('POST')
               <div class="card-body">
                 <div class="form-group">
                   <label >Tên danh mục</label>
-                  <input type="text" name="title" class="form-control"  placeholder="Nhập tên "  value="">
+                  <input type="text" name="name" class="form-control"  placeholder="Nhập tên "  value="">
                 </div>
-               
                 </div>
               </div>
-              <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Sửa</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
               </div>
             </form>
           </div>

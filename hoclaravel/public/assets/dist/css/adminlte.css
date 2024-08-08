@@ -52248,3 +52248,61 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+.status-chua-thanh-toan-coc {
+    background-color: #ffc107; /* Màu vàng */
+    color: white;
+}
+
+.status-chua-xac-nhan {
+    background-color: #6c757d; /* Màu xám */
+    color: white;
+}
+
+.status-da-xac-nhan {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+}
+
+.status-da-thanh-toan {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+}
+
+.status-da-huy {
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+}
+.note-container {
+    position: relative;
+    max-width: 150px; /* Thay đổi kích thước phù hợp */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.note-text {
+    display: inline;
+}
+
+.note-container .note-text {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.note-container .note-toggle {
+    display: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.note-container.expanded .note-text {
+    white-space: normal;
+}
+
+.note-container.expanded .note-toggle {
+    display: inline;
+}

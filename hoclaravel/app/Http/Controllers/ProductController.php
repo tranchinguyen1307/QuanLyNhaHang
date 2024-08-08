@@ -12,9 +12,8 @@ class ProductController extends Controller
     {
         $categories = $this->categories();
         $products = $this->products($categories);
-        $defaultCategoryId = 1;
 
-        return view('client.pages.menu', compact('products', 'categories', 'defaultCategoryId'));
+        return view('client.menu', compact('products', 'categories'));
     }
 
     public function products(Collection $categories): array
