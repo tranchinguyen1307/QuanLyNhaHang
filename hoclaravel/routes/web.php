@@ -25,7 +25,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('menu')->name('menu.')->group(function () {
         Route::get('/', [AdminHomeController::class, 'index'])->name('index');
         Route::get('/create', [AdminHomeController::class, 'create'])->name('create');
-        Route::get('/edit', [AdminHomeController::class, 'edit'])->name('edit');
+        Route::post('/store', [AdminHomeController::class, 'store'])->name('store');
+        Route::get('/edit{id}', [AdminHomeController::class, 'edit'])->name('edit');
+        Route::patch('update/{id}', [AdminHomeController::class, 'update'])->name('update');
+        Route::delete('/{id}', [AdminHomeController::class, 'destroy'])->name('destroy');
+
     });
 
     // Table 
@@ -53,7 +57,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('category')->name('category.')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('/create', [CategoryController::class, 'create'])->name('create');
-        Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
+        Route::post('/store', [CategoryController::class, 'store'])->name('store');
+        Route::get('/edit{id}', [CategoryController::class, 'edit'])->name('edit');
+        Route::patch('update/{id}', [CategoryController::class, 'update'])->name('update');
+        Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('destroy');
     });
 });
 
