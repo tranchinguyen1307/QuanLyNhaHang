@@ -45,6 +45,20 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
+                                <label>Số điện thoại</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="<?php echo e(old('phone')); ?>">
+                                <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="form-group">
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="<?php echo e(old('salary')); ?>">
                                 <?php $__errorArgs = ['salary'];

@@ -22,7 +22,8 @@ class Employee extends Authenticatable
         'created_at',
         'status',
         'img',
-        'address'
+        'address',
+        'phone',
     ];
 
     protected $hidden = [

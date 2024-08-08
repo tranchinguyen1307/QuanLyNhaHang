@@ -31,6 +31,12 @@ class StoreEmployeeRequest extends FormRequest
             'created_at' => 'required|date', 
             'address' => 'required|string|max:255', 
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'phone' => [
+                'required',
+                'numeric',
+                'digits_between:10,11',
+                'regex:/^0[1-9][0-9]{8,9}$/',
+            ],
         ];
     }
 
@@ -60,6 +66,10 @@ class StoreEmployeeRequest extends FormRequest
             'img.image' => 'Ảnh phải là một tệp hình ảnh.',
             'img.mimes' => 'Ảnh phải có định dạng: jpeg, png, jpg, gif, svg.',
             'img.max' => 'Ảnh không được lớn hơn 2MB.',
+            'phone.required' => 'Số điện thoại là bắt buộc.',
+            'phone.numeric' => 'Số điện thoại phải là số.',
+            'phone.digits_between' => 'Số điện thoại phải có từ 10 đến 11 chữ số.',
+            'phone.regex' => 'Số điện thoại phải bắt đầu bằng 0 và có từ 10 đến 11 chữ số.',
         ];
     }
 

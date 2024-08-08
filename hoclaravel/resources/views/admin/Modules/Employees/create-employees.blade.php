@@ -32,6 +32,13 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label>Số điện thoại</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="{{ old('phone') }}">
+                                @error('phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="{{ old('salary') }}">
                                 @error('salary')
