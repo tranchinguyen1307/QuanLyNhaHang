@@ -13,15 +13,17 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" enctype="multipart/form-data">
+            <form enctype="multipart/form-data" action="{{ route('admin.menu.store') }}" method="POST">
+              @csrf
+              @method('POST')
               <div class="card-body">
                 <div class="form-group">
                   <label >Tên món</label>
-                  <input type="text" name="title" class="form-control"  placeholder="Nhập món"  value="">
+                  <input type="text" name="name" class="form-control"  placeholder="Nhập Tên Món"  value="">
                 </div>
                 <div class="form-group">
                     <label >Giá</label>
-                    <input type="text" name="title" class="form-control"  placeholder="Nhập tên món"  value="">
+                    <input type="number" name="price" class="form-control"  placeholder="Nhập Giá"  value="">
                   </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Mô tả</label>
@@ -31,18 +33,21 @@
                   <label >Ảnh</label>
                   <input type="file" name="image" class="form-control pt-1 pl-0 "  >
                 </div>
-                <div class="form-group pt-3">
-                  <label >Thể loại</label>
-                  <select name="category" class ="ml-3" >
-                        <option  value="1">Món chính</option>
-                        <option  value="1">Món phụ</option>
+                <div class="form-group">
+                  <label for="role_id">Thể loại</label>
+                  <select name="category_id" id="category_id" class="form-control">
+                      @foreach ($categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                      @endforeach
                   </select>
-                </div>
-                </div>
+                  @error('role_id')
+                      <div class="text-danger">{{ $message }}</div>
+                  @enderror
               </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
               </div>
             </form>
           </div>
