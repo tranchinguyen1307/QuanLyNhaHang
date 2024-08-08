@@ -7,28 +7,41 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-            <a href="{{ route('/trang-chu') }}"
-                class="nav-item nav-link  {{ request()->is('/') ? 'active' : '' }}">Trang
+            <a href="{{ route('/trang-chu') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Trang
                 Chủ</a>
             <a href="{{ route('client.san-pham.index') }}"
                 class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Thực Đơn</a>
             <a href="{{ route('client.lien-he.index') }}"
                 class="nav-item nav-link {{ request()->is('client/lien-he*') ? 'active' : '' }}">Liên Hệ</a>
-            <a href="{{ route('client.dat-ban.index') }}"
-                class="nav-item nav-link {{ request()->is('client/dat-ban*') ? 'active' : '' }}">Đặt bàn</a>
-
+            @if (Auth::check())
+                <a href="{{ route('client.dat-ban.index') }}"
+                    class="nav-item nav-link {{ request()->is('client/dat-ban*') ? 'active' : '' }}">Đặt bàn</a>
+            @else
+                <a href="{{ route('login') }}" class="nav-item nav-link">Đặt bàn</a>
+            @endif
         </div>
 
         @if (Auth::check())
-            <div class="d-flex align-items-center">
-                <span class="text-light me-3">Xin chào, {{ Auth::user()->name }}</span>
-                <a href="{{ route('logout') }}" class="btn btn-primary py-2 px-4"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Đăng xuất
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Xin chào, {{ Auth::user()->name }}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Xem Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Đăng xuất
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
             </div>
         @else
             <a href="{{ route('login') }}" class="btn btn-primary py-2 px-4">Đăng nhập</a>

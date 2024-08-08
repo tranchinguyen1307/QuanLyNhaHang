@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -25,7 +26,8 @@
     <link href="{{ asset('clients/lib/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('clients/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('clients/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.css"
+        rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('clients/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -142,7 +144,7 @@
 
     <!-- JavaScript Libraries -->
     @stack('script')
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('clients/lib/wow/wow.min.js') }}"></script>
@@ -156,7 +158,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('clients/js/main.js') }}"></script>
-    <script>
+    {{-- <script>
         if ('WebSocket' in window) {
             (function() {
                 function refreshCSS() {
@@ -164,7 +166,7 @@
                     var head = document.getElementsByTagName("head")[0];
                     for (var i = 0; i < sheets.length; ++i) {
                         var elem = sheets[i];
-                        var parent = elem.parentElement hoặc head;
+                        var parent = elem.parentElement;
                         parent.removeChild(elem);
                         var rel = elem.rel;
                         if (elem.href && typeof rel != "string"
@@ -193,7 +195,7 @@
             console.error('Nâng cấp trình duyệt của bạn. Trình duyệt này KHÔNG hỗ trợ WebSocket cho Tải Lại Trực Tiếp.');
         }
         // ]]>
-    </script>
+    </script> --}}
 </body>
 
 </html>
