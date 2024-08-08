@@ -14,16 +14,16 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" action="{{ route('admin.category.store') }}">
+              @csrf
+              @method('POST')
               <div class="card-body">
                 <div class="form-group">
                   <label >Tên danh mục</label>
-                  <input type="text" name="title" class="form-control"  placeholder="Nhập Tên "  value="">
+                  <input type="text" name="name" class="form-control"  placeholder="Nhập tên "  value="">
                 </div>
-               
                 </div>
               </div>
-              <!-- /.card-body -->
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Thêm</button>
               </div>

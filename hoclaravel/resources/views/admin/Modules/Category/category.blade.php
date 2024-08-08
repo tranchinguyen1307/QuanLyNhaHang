@@ -19,16 +19,24 @@
                       </tr>
                     </thead>
                     <tbody>
-                          <td >1</td>
-                          <td class="text-wrap">Món chính</td>
-                          <td class = "row">
-                            <a class="btn btn-primary col-2" href="{{ route('admin.menu.edit') }}">Sửa</a>
-                            <form class="col" method="post" action = "/admin/delete" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
-                                <input name="id" type="hidden" value="1">
-                                <button type ="submit" class = "btn btn-danger">Xóa</button>
-                            </form>
+                      @foreach ($category as $categorys)
+                      <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td class="text-wrap">{{ $categorys->name }}</td>
+                          <td class="row">
+                            <a href="{{ route('admin.category.edit', ['id' => $categorys->id]) }}" class="btn btn-primary">Chỉnh sửa</a>
+                            <form method="POST"
+                              action="{{ route('admin.category.destroy', $categorys->id) }}"
+                              onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                              @csrf
+                              @method('DELETE')
+                              <input name="id" type="hidden" value="1">
+                              <button type ="submit" class = "btn btn-danger">Xóa</button>
+                          </form>
                           </td>
-                    </tbody>
+                      </tr>
+                      @endforeach
+                  </tbody>
                   </table>
                   <ul class="pagination pagination-primary">
     

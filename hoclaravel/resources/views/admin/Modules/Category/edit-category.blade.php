@@ -14,14 +14,13 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" enctype="multipart/form-data">
-              <div class="card-body">
-                <div class="form-group">
-                  <label >Tên danh mục</label>
-                  <input type="text" name="title" class="form-control"  placeholder="Nhập tên "  value="">
-                </div>
-               
-                </div>
+            <form action="{{ route('admin.category.update', $category->id) }}" method="POST">
+              @csrf
+              @method('PATCH')
+              <div class="form-group">
+                  <label>Tên danh mục</label>
+                  <input type="text" name="name" class="form-control" value="{{ $category->name }}" required>
+              </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
