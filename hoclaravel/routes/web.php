@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController as CustomerHomeController;
 use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
 use App\Http\Controllers\Admin\InvoiceController;
@@ -12,9 +11,9 @@ use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\CheckEmployeeRole;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Middleware\CheckEmployeeRole;
+use Illuminate\Support\Facades\Route;
 
 // /client
 Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
@@ -72,9 +71,8 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
 
     });
 
-
     // Employees
-    Route::prefix('employees')->middleware([CheckEmployeeRole::class . ':1'])->name('employees.')->group(function () {
+    Route::prefix('employees')->middleware([CheckEmployeeRole::class.':1'])->name('employees.')->group(function () {
         Route::get('/', [EmployeesHomeController::class, 'index'])->name('index');
         Route::get('/create', [EmployeesHomeController::class, 'create'])->name('create');
         Route::get('/edit/{id}', [EmployeesHomeController::class, 'edit'])->name('edit');
@@ -101,7 +99,7 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::patch('/update/{id}', [CustomerHomeController::class, 'update'])->name('update');
     });
 
-
+});
 
 // dang nhap de dat bàn
 Route::middleware(['auth'])->group(function () {
