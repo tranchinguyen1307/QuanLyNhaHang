@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -25,7 +26,8 @@
     <link href="<?php echo e(asset('clients/lib/animate/animate.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('clients/lib/owlcarousel/assets/owl.carousel.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('clients/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')); ?>" rel="stylesheet" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.css"
+        rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?php echo e(asset('clients/css/bootstrap.min.css')); ?>" rel="stylesheet">
 
@@ -35,8 +37,6 @@
 </head>
 
 <body>
-
-
     <div class=" bg-white p-0">
         <div class="container-xxl position-relative p-0">
 
@@ -88,9 +88,35 @@
 
         </div>
 
-        <?php echo $__env->yieldContent('content'); ?>
-        <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
+ 
+    </div>
+    <?php echo $__env->yieldContent('content'); ?>
+    <!--hồi đó ở đây nó đầy đủ của nó là cái này   [container-xxl bg-white p-0]  -->
+    <div class=" bg-white p-0">
+        <div class="container-xxl position-relative p-0">
 
+            <?php if (isset($component)) { $__componentOriginalf1dc9c6fd6e456f7688158ab3432928c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf1dc9c6fd6e456f7688158ab3432928c = $attributes; } ?>
+<?php $component = App\View\Components\Client\Navbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('client.navbar'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Client\Navbar::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+             <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf1dc9c6fd6e456f7688158ab3432928c)): ?>
+<?php $attributes = $__attributesOriginalf1dc9c6fd6e456f7688158ab3432928c; ?>
+<?php unset($__attributesOriginalf1dc9c6fd6e456f7688158ab3432928c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf1dc9c6fd6e456f7688158ab3432928c)): ?>
+<?php $component = $__componentOriginalf1dc9c6fd6e456f7688158ab3432928c; ?>
+<?php unset($__componentOriginalf1dc9c6fd6e456f7688158ab3432928c); ?>
+<?php endif; ?>
+            <!-- Hiển thị tên người dùng sau khi đăng nhập -->
+        </div>
         <!-- Spinner Start -->
         <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -173,7 +199,7 @@
 
     <!-- JavaScript Libraries -->
     <?php echo $__env->yieldPushContent('script'); ?>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo e(asset('clients/lib/wow/wow.min.js')); ?>"></script>
@@ -187,44 +213,7 @@
 
     <!-- Template Javascript -->
     <script src="<?php echo e(asset('clients/js/main.js')); ?>"></script>
-    <script>
-        if ('WebSocket' in window) {
-            (function() {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement hoặc head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string"
-                            hoặc rel.length == 0 hoặc rel.toLowerCase() ==
-                            "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date()
-                                .valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function(msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        } else {
-            console.error('Nâng cấp trình duyệt của bạn. Trình duyệt này KHÔNG hỗ trợ WebSocket cho Tải Lại Trực Tiếp.');
-        }
-        // ]]>
-    </script>
+    
 </body>
 
 </html>

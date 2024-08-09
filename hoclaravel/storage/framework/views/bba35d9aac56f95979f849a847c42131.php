@@ -7,22 +7,42 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-            <a href="<?php echo e(route('/trang-chu')); ?>" class="nav-item nav-link active">Trang Chủ</a>
-            <a href="<?php echo e(route('client.san-pham.index')); ?>" class="nav-item nav-link">Thực Đơn</a>
-            <a href="<?php echo e(route('client.lien-he.index')); ?>" class="nav-item nav-link">Liên Hệ</a>
-            <a href="<?php echo e(route('client.dat-ban.index')); ?>" class="nav-item nav-link">Đặt bàn</a>
+            <a href="<?php echo e(route('/trang-chu')); ?>" class="nav-item nav-link <?php echo e(request()->is('/') ? 'active' : ''); ?>">Trang
+                Chủ</a>
+            <a href="<?php echo e(route('client.san-pham.index')); ?>"
+                class="nav-item nav-link <?php echo e(request()->is('client/san-pham*') ? 'active' : ''); ?>">Thực Đơn</a>
+            <a href="<?php echo e(route('client.lien-he.index')); ?>"
+                class="nav-item nav-link <?php echo e(request()->is('client/lien-he*') ? 'active' : ''); ?>">Liên Hệ</a>
+            <?php if(Auth::check()): ?>
+                <a href="<?php echo e(route('client.dat-ban.index')); ?>"
+                    class="nav-item nav-link <?php echo e(request()->is('client/dat-ban*') ? 'active' : ''); ?>">Đặt bàn</a>
+            <?php else: ?>
+                <a href="<?php echo e(route('login')); ?>" class="nav-item nav-link">Đặt bàn</a>
+            <?php endif; ?>
         </div>
 
         <?php if(Auth::check()): ?>
-            <div class="d-flex align-items-center">
-                <span class="text-light me-3">Xin chào, <?php echo e(Auth::user()->name); ?></span>
-                <a href="<?php echo e(route('logout')); ?>" class="btn btn-primary py-2 px-4"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Đăng xuất
-                </a>
-                <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                    <?php echo csrf_field(); ?>
-                </form>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Xin chào, <?php echo e(Auth::user()->name); ?>
+
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="<?php echo e(route('profile.edit')); ?>">Xem Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Đăng xuất
+                        </a>
+                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                            <?php echo csrf_field(); ?>
+                        </form>
+                    </li>
+                </ul>
             </div>
         <?php else: ?>
             <a href="<?php echo e(route('login')); ?>" class="btn btn-primary py-2 px-4">Đăng nhập</a>

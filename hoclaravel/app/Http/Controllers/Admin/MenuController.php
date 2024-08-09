@@ -13,7 +13,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(3);
         return view('admin.Modules.menu.home', compact('products'));
     }
 
@@ -45,15 +45,17 @@ class MenuController extends Controller
     }
 
     public function edit($id)
-{
-    $category = Category::find($id);
-
-    if (!$category) {
-        return redirect()->route('admin.category.index')->with('error', 'Danh mục không tồn tại.');
+    {
+        $product = Product::find($id); 
+        $catgories = Category::orderBy('id', 'asc')->get();
+        // $categories = Category::find($id);
+    
+        if (!$product) {
+            return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.'); 
+        }
+    
+        return view('admin.Modules.menu.edit-menu', ['product' => $product, 'categories'=>$catgories]); 
     }
-
-    return view('admin.Modules.Category.edit-category', ['category' => $category]);
-}
 
 
     public function update(Request $request, $id)

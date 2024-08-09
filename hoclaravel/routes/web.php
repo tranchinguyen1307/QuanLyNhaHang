@@ -31,7 +31,6 @@ Route::get('admin/login', [EmployeesHomeController::class, 'showLoginForm'])->na
 Route::post('admin/login', [EmployeesHomeController::class, 'login'])->name('admin.login');
 Route::get('admin/logout', [EmployeesHomeController::class, 'logout'])->name('admin.logout');
 Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(function () {
-    Route::prefix('admin')->name('admin.')->group(function () {
         // menu
         Route::prefix('menu')->name('menu.')->group(function () {
             Route::get('/', [AdminHomeController::class, 'index'])->name('index');
@@ -107,7 +106,6 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         });
 
     });
-});
 // dang nhap de dat bàn
 Route::middleware(['auth'])->group(function () {
     Route::get('/client/dat-ban', [ClientBookTableController::class, 'index'])->name('client.dat-ban.index');

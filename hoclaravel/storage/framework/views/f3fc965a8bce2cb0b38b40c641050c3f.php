@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,5 +29,6 @@
   <!-- Favicon -->
   <link rel="icon" href="<?php echo e(asset('path/to/your/favicon.ico')); ?>" type="image/x-icon">
 </head>
+
 <body>
 <?php /**PATH D:\FPT Polytechnic\Php3\QuanLyNhaHang\hoclaravel\resources\views/components/admin/header.blade.php ENDPATH**/ ?>

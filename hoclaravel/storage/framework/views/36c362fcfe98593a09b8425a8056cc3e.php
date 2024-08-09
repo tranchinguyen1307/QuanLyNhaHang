@@ -23,7 +23,7 @@
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="<?php echo e(asset('clients/img/team-2.jpg')); ?>" alt="Thành viên 2">
-                    </div>
+                    </div>    
                     <h5 class="mb-0">Họ và Tên</h5>
                     <small>Chức Vụ</small>
                     <div class="d-flex justify-content-center mt-3">
@@ -38,10 +38,6 @@
                     <div class="rounded-circle overflow-hidden m-4">
 
                         <img class="img-fluid" src="<?php echo e(asset('clients/img/team-3.jpg')); ?>" alt="Thành viên 3">
-
-
-
-
 
                     </div>
                     <h5 class="mb-0">Họ và Tên</h5>

@@ -12,7 +12,9 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex user-infor">
             <div class="image">
+
                 <img src="<?php echo e(asset('storage/images/employees/' . $inforEmployee->img)); ?>" class="img-fluid rounded-circle avatar" alt="User Image">
+
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?php echo e($inforEmployee->username); ?></a>
@@ -64,7 +66,7 @@
                         </li>
                     </ul>
                 </li>
-                </li>
+
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-tag"></i>
@@ -89,8 +91,6 @@
 
                     </ul>
                 </li>
-                </li>
-                </li>
 
                 <li class="nav-item">
                     <a href="" class="nav-link">
@@ -113,6 +113,26 @@
                                 <p>Thêm</p>
                             </a>
                         </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Hóa đơn
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('admin.invoices.list')); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách hóa đơn</p>
+                            </a>
+                        </li>
+
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -167,7 +187,6 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-
 </aside>
 </aside>
 <style>

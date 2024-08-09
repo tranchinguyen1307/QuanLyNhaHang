@@ -1,7 +1,6 @@
 <?php $__env->startSection('title', 'Khách Hàng'); ?>
 
 <?php $__env->startSection('content'); ?>
-
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -10,7 +9,7 @@
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm Khách hàng</h3>
+                        <h3 class="card-title">Thêm Khách Hàng</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -99,7 +98,6 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </section>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.layouts.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\FPT Polytechnic\Php3\QuanLyNhaHang\hoclaravel\resources\views/admin/modules/Customer/create-customer.blade.php ENDPATH**/ ?>

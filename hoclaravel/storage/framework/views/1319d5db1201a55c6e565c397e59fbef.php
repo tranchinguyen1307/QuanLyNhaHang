@@ -4,11 +4,14 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
+            <!-- left column -->
             <div class="col-md-12">
+                <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Sửa Nhân Viên</h3>
                     </div>
+                    <!-- form start -->
                     <?php $__currentLoopData = $employees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <form method="POST" action="<?php echo e(route('admin.employees.update', $employee->id)); ?>" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
@@ -43,7 +46,6 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
-<<<<<<< HEAD
                                 <label>Số điện thoại</label>
                                 <input type="text" name="phone" class="form-control" placeholder="Nhập Số điện thoại" value="<?php echo e(old('phone', $employee->phone)); ?>">
                                 <?php $__errorArgs = ['phone'];
@@ -51,15 +53,13 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <div class="text-danger"><?php echo e($message); ?></div>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
-=======
->>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
                                 <label>Lương</label>
                                 <input type="number" name="salary" class="form-control" placeholder="Nhập lương" value="<?php echo e(old('salary', $employee->salary)); ?>">
                                 <?php $__errorArgs = ['salary'];
@@ -121,10 +121,10 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="form-group">
-                                <label for="role_id">Trạng thái</label>
+                                <label for="status">Trạng thái</label>
                                 <select name="status" id="status" class="form-control">
-                                        <option value="1" <?php echo e($employee->status == 1 ? 'selected' : ''); ?>>Đang làm</option>
-                                        <option value="2" <?php echo e($employee->status == 2 ? 'selected' : ''); ?>>Đã nghỉ</option>
+                                    <option value="1" <?php echo e($employee->status == 1 ? 'selected' : ''); ?>>Đang làm</option>
+                                    <option value="2" <?php echo e($employee->status == 2 ? 'selected' : ''); ?>>Đã nghỉ</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -176,17 +176,13 @@ unset($__errorArgs, $__bag); ?>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-</section>   
-=======
 </section>
->>>>>>> b7636ac4249915d94f4f715a3f9b92f1ca6c782f
 
 <?php $__env->stopSection(); ?>
 
@@ -199,7 +195,7 @@ unset($__errorArgs, $__bag); ?>
             reader.onload = function(e) {
                 const preview = document.getElementById('preview');
                 preview.src = e.target.result;
-                preview.classList.remove('d-none'); 
+                preview.classList.remove('d-none');
             }
             reader.readAsDataURL(file);
         }

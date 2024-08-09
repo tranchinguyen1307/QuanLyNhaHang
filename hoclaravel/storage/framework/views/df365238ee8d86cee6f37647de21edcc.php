@@ -51,11 +51,9 @@
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
-                                <ul class="pagination pagination-primary mt-3">
-                                    <ul class="pagination pagination-primary mt-3 justify-content-center">
-                                        <?php echo e($customers->links()); ?>
+                                <ul class="pagination pagination-primary mt-3 justify-content-center">
+                                    <?php echo e($customers->links()); ?>
 
-                                    </ul>
                                 </ul>
                             </div>
                             <!-- /.card-body -->
@@ -89,7 +87,6 @@
             </div>
         </div>
     </div>
-
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('scripts'); ?>

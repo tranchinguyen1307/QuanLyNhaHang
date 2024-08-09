@@ -13,11 +13,11 @@ class UpdateCustomerRequest extends FormRequest
 
     public function rules()
     {
-        $customerId = $this->route('customer');
+        $customerId = $this->route('id');
 
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:customers,email,' . $customerId,
+            'email' => 'required|string|email|max:255|unique:users,email,' . $customerId,
             'phone' => [
                 'required',
                 'numeric',

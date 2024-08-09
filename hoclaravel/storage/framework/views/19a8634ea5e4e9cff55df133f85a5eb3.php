@@ -38,6 +38,26 @@
 <?php $component = $__componentOriginale842643f388f3f2a729c3cad188d3504; ?>
 <?php unset($__componentOriginale842643f388f3f2a729c3cad188d3504); ?>
 <?php endif; ?>
+<?php if (isset($component)) { $__componentOriginal64e2265cfb81aa59d135283195bf883b = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal64e2265cfb81aa59d135283195bf883b = $attributes; } ?>
+<?php $component = App\View\Components\Admin\Navbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('admin.navbar'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Admin\Navbar::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal64e2265cfb81aa59d135283195bf883b)): ?>
+<?php $attributes = $__attributesOriginal64e2265cfb81aa59d135283195bf883b; ?>
+<?php unset($__attributesOriginal64e2265cfb81aa59d135283195bf883b); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal64e2265cfb81aa59d135283195bf883b)): ?>
+<?php $component = $__componentOriginal64e2265cfb81aa59d135283195bf883b; ?>
+<?php unset($__componentOriginal64e2265cfb81aa59d135283195bf883b); ?>
+<?php endif; ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -71,6 +91,7 @@
 <?php $component = $__componentOriginalb8e9be121ac5809d76d4768b3abc0902; ?>
 <?php unset($__componentOriginalb8e9be121ac5809d76d4768b3abc0902); ?>
 <?php endif; ?>
+<?php echo $__env->yieldPushContent('scripts'); ?>
 <?php echo $__env->yieldPushContent('scripts'); ?>
 
 <?php /**PATH D:\FPT Polytechnic\Php3\QuanLyNhaHang\hoclaravel\resources\views/admin/layouts/masterlayout.blade.php ENDPATH**/ ?>
