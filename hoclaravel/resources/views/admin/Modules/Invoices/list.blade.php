@@ -51,9 +51,9 @@
                                                 <td>{{ $reservation->reservation_time }}</td>
                                                 <td>{{ number_format($reservation->deposit, 0, ',', '.') }} VND</td>
                                                 <td>
-                                                    {{ number_format(array_sum(array_column($cart, 'total')), 0, ',', '.') }}
-                                                    VND
+                                                    {{ number_format($reservation->total, 0, ',', '.') }} VND
                                                 </td>
+
                                                 <td>
                                                     <!-- Hiển thị trạng thái -->
                                                     <span

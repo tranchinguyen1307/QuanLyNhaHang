@@ -10,16 +10,21 @@ class InvoiceController extends Controller
 {
     public function index()
     {
-
         $reservations = Reservation::where('status', 'Đã thanh toán')->get();
-
         $cart = session('cart', []);
 
+        // Tính toán tổng cộng bao gồm tiền cọc cho mỗi hóa đơn
         $reservationsWithTotal = $reservations->map(function ($reservation) use ($cart) {
             // Lấy các sản phẩm liên quan đến bàn này từ cart
             $items = array_filter($cart, function ($item) use ($reservation) {
                 return $item['reservation_id'] == $reservation->id;
             });
+
+            // Tính tổng số tiền từ cart
+            $total = array_sum(array_column($items, 'total')) + $reservation->deposit;
+
+            // Thêm trường total vào đối tượng reservation
+            $reservation->total = $total;
 
             return $reservation;
         });
