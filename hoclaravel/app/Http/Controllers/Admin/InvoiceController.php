@@ -21,16 +21,18 @@ class InvoiceController extends Controller
             });
 
             // Tính tổng số tiền từ cart
-            $total = array_sum(array_column($items, 'total')) + $reservation->deposit;
+            $totalAmount = array_sum(array_column($items, 'total')) + $reservation->deposit;
 
-            // Thêm trường total vào đối tượng reservation
-            $reservation->total = $total;
+            // Thêm trường total_amount vào đối tượng reservation
+            $reservation->total_amount = $totalAmount;
 
             return $reservation;
         });
 
         return view('admin.Modules.Invoices.list', compact('reservationsWithTotal', 'cart'));
     }
+
+
 
     public function updatePaymentStatus(Request $request, $id)
     {
@@ -51,5 +53,16 @@ class InvoiceController extends Controller
 
         return redirect()->route('admin.invoices.list')
             ->with('success', 'Đặt bàn đã được xóa thành công.');
+    }
+
+    public function showDetail(Request $request, $id)
+    {
+        $reservation = Reservation::findOrFail($id);
+
+        $reservation->status = 'Đã thanh toán';
+        $reservation->save();
+        $cart = session('cart', []);
+
+        return view('admin.Modules.Invoices.invoice', compact('reservation', 'cart'));
     }
 }
