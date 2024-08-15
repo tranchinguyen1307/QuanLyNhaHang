@@ -13,7 +13,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(3);
         return view('admin.Modules.menu.home', compact('products'));
     }
 
@@ -46,15 +46,14 @@ class MenuController extends Controller
 
     public function edit($id)
 {
-    $category = Category::find($id);
-
-    if (!$category) {
-        return redirect()->route('admin.category.index')->with('error', 'Danh mục không tồn tại.');
+    $product = Product::find($id); 
+    $catgories = Category::orderBy('id', 'asc')->get();
+    if (!$product) {
+        return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.'); 
     }
 
-    return view('admin.Modules.Category.edit-category', ['category' => $category]);
+    return view('admin.Modules.menu.edit-menu', ['product' => $product, 'categories'=>$catgories]); 
 }
-
 
     public function update(Request $request, $id)
     {
@@ -63,8 +62,9 @@ class MenuController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('content');
         $product->price = $request->input('price');
+        $product->created_at = $request->input('created_at');
+        $product->update_at = $request->input('update_at');
         $product->updated_at = $request->input('updated_at');
-        $product->category_id = $request->input('category_id');
         if ($request->file('image')) {
             if ($product->image) {
                 $oldImagePath = public_path('clients/img/' . $product->image);
@@ -80,6 +80,14 @@ class MenuController extends Controller
         $product->save();
         return redirect()->route('admin.menu.index')->with('status', 'Cập nhật sản phẩm thành công');
     }
+
+    // public function search(Request $request)
+    // {
+    //     $query = $request->input('query');
+    //     $products = Product::where('name', 'LIKE', "%$query%")->orWhere('description', 'LIKE', "%$query%")->paginate(3);
+        
+    //     return view('admin.Modules.menu', compact('products'));
+    // }
 
     public function destroy($id)
 {

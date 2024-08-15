@@ -1,5 +1,5 @@
 @extends('admin.layouts.masterlayout')
-@section('title', 'Menu Món Ăn')
+@section('title', 'Danh Sách Món Ăn')
 @section('content')
 
     <body class="hold-transition sidebar-mini">
@@ -13,6 +13,7 @@
                                     <table class="table table-hover text-nowrap">
                                         <thead>
                                             <tr>
+                                                {{-- <th>STT</th> --}}
                                                 <th>Ảnh</th>
                                                 <th>Tên món</th>
                                                 <th>Giá</th>
@@ -24,6 +25,7 @@
                                         <tbody>
                                             @foreach ($products as $product)
                                                 <tr>
+                                                    {{-- <td>{{ $product->category_id }}</td> --}}
                                                     <td>
                                                         <img src="{{ asset('clients/img/' . $product->image) }}"
                                                             style= "width: 150px; height:auto; object-fit:cover; border-radius:5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
@@ -33,9 +35,11 @@
                                                     <td>
                                                         {{ $product->category->name }}
                                                     </td>
-                                                    <td>{{ $product->updated_at }}</td>
+                                                    {{-- <td>{{ $product->created_at}}</td> --}}
+                                                    <td>{{ $product->updated_at}}</td>
+                                                    {{-- <td>{{ $product->created_at }}</td> --}}
                                                     <td class=row>
-                                                        <a class="btn btn-primary col-5"
+                                                        <a class="btn btn-primary"
                                                             href="{{ route('admin.menu.edit', ['id' => $product->id]) }}">Sửa</a>
                                                         <form method="POST"
                                                             action="{{ route('admin.menu.destroy', $product->id) }}"
@@ -43,19 +47,16 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <input name="id" type="hidden" value="1">
-                                                            <button type ="submit" class = "btn btn-danger">Xóa</button>
+                                                            <button type ="submit" class = "btn btn-danger" >Xóa</button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    <ul class=" mx-auto pagination pagination-primary ">
-                                        <li class="page-item"><a class="page-link" href="/admin?page=1">Previous</a></li>
-                                        <li class="page-item active ml-2"><a class="page-link" href="/admin?page=1">1</a>
-                                        </li>
-                                        <li class="page-item ml-2"><a class="page-link" href="/admin?page=1">Next</a></li>
-                                    </ul>
+                                    <div class="d-flex justify-content-center mt-3">
+                                        {{ $products->links() }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -63,5 +64,4 @@
                 </div>
             </section>
         </div>
-
     @endsection
