@@ -20,13 +20,13 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $product = new Product;
-        
+
         $product->name = $request->input('name');
         $product->description = $request->input('content');
         $product->price = $request->input('price');
         $product->created_at = $request->input('created_at');
         $product->category_id = $request->input('category_id');
-        
+
         if ($request->file('image')) {
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -40,23 +40,22 @@ class MenuController extends Controller
     public function create()
     {
         $catgories = Category::orderBy('id', 'asc')->get();
-        return view('admin.Modules.menu.create-menu',
-        ['categories'=>$catgories]);
+        return view(
+            'admin.Modules.menu.create-menu',
+            ['categories' => $catgories]
+        );
     }
 
     public function edit($id)
     {
-        $product = Product::find($id); 
+        $product = Product::find($id);
         $catgories = Category::orderBy('id', 'asc')->get();
-        // $categories = Category::find($id);
-    
         if (!$product) {
-            return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.'); 
+            return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.');
         }
-    
-        return view('admin.Modules.menu.edit-menu', ['product' => $product, 'categories'=>$catgories]); 
-    }
 
+        return view('admin.Modules.menu.edit-menu', ['product' => $product, 'categories' => $catgories]);
+    }
 
     public function update(Request $request, $id)
     {
@@ -65,8 +64,9 @@ class MenuController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('content');
         $product->price = $request->input('price');
+        $product->created_at = $request->input('created_at');
+        $product->update_at = $request->input('update_at');
         $product->updated_at = $request->input('updated_at');
-        $product->category_id = $request->input('category_id');
         if ($request->file('image')) {
             if ($product->image) {
                 $oldImagePath = public_path('clients/img/' . $product->image);
@@ -83,17 +83,25 @@ class MenuController extends Controller
         return redirect()->route('admin.menu.index')->with('status', 'Cập nhật sản phẩm thành công');
     }
 
+    // public function search(Request $request)
+    // {
+    //     $query = $request->input('query');
+    //     $products = Product::where('name', 'LIKE', "%$query%")->orWhere('description', 'LIKE', "%$query%")->paginate(3);
+
+    //     return view('admin.Modules.menu', compact('products'));
+    // }
+
     public function destroy($id)
-{
-    $product = Product::find($id);
+    {
+        $product = Product::find($id);
 
-    if (!$product) {
-        return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.');
+        if (!$product) {
+            return redirect()->route('admin.menu.index')->with('error', 'Sản phẩm không tồn tại.');
+        }
+
+        $product->delete();
+
+        return redirect()->route('admin.menu.index')->with('status', 'Xóa sản phẩm thành công');
     }
-
-    $product->delete();
-
-    return redirect()->route('admin.menu.index')->with('status', 'Xóa sản phẩm thành công');
-}
 
 }
