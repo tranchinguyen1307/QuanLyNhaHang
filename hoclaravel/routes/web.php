@@ -11,6 +11,8 @@ use App\Http\Controllers\Client\ClientBookTableController;
 use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdmin;
 use App\Http\Middleware\CheckEmployeeRole;
@@ -21,6 +23,9 @@ Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
 
 Route::prefix('client')->name('client.')->group(function () {
     Route::get('/san-pham', [ProductController::class, 'index'])->name('san-pham.index');
+    Route::get('/san-pham/{id}', [ProductController::class, 'product_detail'])->name('san-pham.detail');
+    Route::post('/san-pham/{id}/comment', [ProductController::class, 'product_comment'])->name('san-pham.comment');
+    Route::delete('/san-pham/{id}/{id_product}/comment', [ProductController::class, 'product_comment_destroy'])->name('san-pham.destroy');
     Route::get('/dat-ban', [ClientBookTableController::class, 'index'])->name('dat-ban.index');
     Route::post('/dat-ban', [ClientBookTableController::class, 'store'])->name('dat-ban.store');
     Route::get('/dat-ban/thanh-toan', [ClientBookTableController::class, 'payment'])->name('reservations.payment');
@@ -44,7 +49,9 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::post('/store', [AdminHomeController::class, 'store'])->name('store');
         Route::get('/edit{id}', [AdminHomeController::class, 'edit'])->name('edit');
         Route::patch('update/{id}', [AdminHomeController::class, 'update'])->name('update');
+        Route::post('/post', [AdminHomeController::class, 'store'])->name('store');
         Route::delete('/{id}', [AdminHomeController::class, 'destroy'])->name('destroy');
+        Route::get('/search', [AdminHomeController::class, 'search'])->name('search');
     });
 
     // Table
@@ -107,6 +114,25 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::patch('update/{id}', [CategoryController::class, 'update'])->name('update');
         Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('destroy');
     });
+    Route::prefix('comment')->name('comment.')->group(function () {
+        Route::get('/', [CommentController::class, 'index'])->name('index');
+        Route::get('/detail/{id}', [CommentController::class, 'detail'])->name('detail');
+        Route::delete('/delete/{id}/{id_product}', [CommentController::class, 'destroy'])->name('destroy');
+    });
+});
+
+
+
+// Middleware for authentication and verification
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/', function () {
+//         return view('client.pages.home');
+//     })->name('/trang-chu');
+// });
     // Post
     Route::prefix('post')->name('post.')->group(function () {
         Route::get('/', [PostController::class, 'index'])->name('index');
