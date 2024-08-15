@@ -11,8 +11,8 @@
                 Chủ</a>
             <a href="{{ route('client.san-pham.index') }}"
                 class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Thực Đơn</a>
-             <a href="{{ route('client.post') }}"
-                class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Bài viết</a>
+            <a href="{{ route('client.post') }}"
+                class="nav-item nav-link {{ request()->is('client/bai-viet*') ? 'active' : '' }}">Bài viết</a>
             <a href="{{ route('client.lien-he.index') }}"
                 class="nav-item nav-link {{ request()->is('client/lien-he*') ? 'active' : '' }}">Liên Hệ</a>
             @if (Auth::check())
@@ -25,8 +25,8 @@
 
         @if (Auth::check())
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     Xin chào, {{ Auth::user()->name }}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
