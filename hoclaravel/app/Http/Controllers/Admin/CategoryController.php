@@ -35,7 +35,10 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        // $category = Category::orderBy('id')->get();
+        if (!$category) {
+            return redirect()->route('admin.category.index')->with('error', 'Sản phẩm không tồn tại.');
+        }
+
         return view('admin.Modules.Category.edit-category', ['category' => $category]);
     }
 
@@ -52,7 +55,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        if (! $category) {
+        if (!$category) {
             return redirect()->route('admin.category.index')->with('error', 'Sản phẩm không tồn tại.');
         }
 
