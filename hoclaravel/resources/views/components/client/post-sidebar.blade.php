@@ -17,7 +17,7 @@
     <div class="card-body">
         <div class="list-group">
             @foreach ($newestPosts as $post)
-            <a href="/home/detailBlog?id={{ $post->id }}" class="list-group-item list-group-item-action d-flex align-items-center">
+            <a href="{{ route('client.detail.post', $post->id) }}" class="list-group-item list-group-item-action d-flex align-items-center">
                 <img src="{{ asset('storage/images/post/avatar/' . $post->avatar) }}" alt="{{ $post->title }}" class="img-thumbnail me-3" style="width: 100px; height: 70px; object-fit: cover;">
                 <div>
                     <h5 class="mb-1">{{ $post->title }}</h5>
