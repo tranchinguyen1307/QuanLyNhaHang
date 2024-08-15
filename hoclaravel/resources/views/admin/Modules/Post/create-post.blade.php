@@ -32,6 +32,14 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="category_id">Thể loại</label>
+                                <select name="category_id" id="category_id" class="form-control">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Ảnh đại diện</label>
                                 <input type="file" name="avatar" id="avatar" class="form-control">
                                 @error('avatar')

@@ -26,6 +26,9 @@ Route::prefix('client')->name('client.')->group(function () {
     Route::get('/dat-ban/thanh-toan', [ClientBookTableController::class, 'payment'])->name('reservations.payment');
     Route::post('/dat-ban/hoan-tat', [ClientBookTableController::class, 'complete'])->name('reservations.complete');
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
+    Route::get('/bai-viet', [PostController::class, 'show'])->name('post');
+    Route::get('/xem-bai-viet/{id}', [PostController::class, 'detailPost'])->name('detail.post');
+    Route::get('/baiviet/category/{category}', [PostController::class, 'filterByCategory'])->name('posts.filterByCategory');
 });
 
 Route::get('admin/login', [EmployeesHomeController::class, 'showLoginForm'])->name('admin.login.form');

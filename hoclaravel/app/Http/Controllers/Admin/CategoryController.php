@@ -24,6 +24,7 @@ class CategoryController extends Controller
     {
         $category = new Category;
         $category->name = $request->input('name');
+        $category->style = $request->input('style');
         $category->save();
 
         return redirect()->route('admin.category.index')->with('status', 'Thêm sản phẩm thành công');

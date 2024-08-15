@@ -14,5 +14,6 @@ class Post extends Model
         'content',
         'avatar',  
         'employee_id',
+        'category_id',
     ];
 }
