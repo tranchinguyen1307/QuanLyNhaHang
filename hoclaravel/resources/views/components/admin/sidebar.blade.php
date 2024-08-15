@@ -13,21 +13,21 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex user-infor">
             <div class="image">
 
-                <img src="{{ asset('storage/images/employees/' . $inforEmployee->img) }}" class="img-fluid rounded-circle avatar" alt="User Image">
+                <img src="{{ asset('storage/images/employees/' . $inforEmployee->img) }}"
+                    class="img-fluid rounded-circle avatar" alt="User Image">
 
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ $inforEmployee->username }}</a>
             </div>
-            <div class= "ml-5 mt-1"><a href="{{ route('admin.logout') }}">Đăng xuất</a></div>
+            <div class="ml-5 mt-1"><a href="{{ route('admin.logout') }}">Đăng xuất</a></div>
 
         </div>
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                    aria-label="Search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
                         <i class="fas fa-search fa-fw"></i>
@@ -38,8 +38,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -183,6 +182,24 @@
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Bình luận
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.comment.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Bài viết
@@ -214,8 +231,8 @@
 </aside>
 <style>
     .user-infor .avatar {
-        width: 30px; 
-        height: 30px; 
+        width: 30px;
+        height: 30px;
         object-fit: cover;
     }
 </style>
