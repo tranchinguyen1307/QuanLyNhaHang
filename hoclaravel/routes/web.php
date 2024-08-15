@@ -9,6 +9,7 @@ use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CommentController;
 use Illuminate\Support\Facades\Route;
 
 // /client
@@ -16,6 +17,9 @@ Route::get('/', [ClientHomeController::class, 'index'])->name('/trang-chu');
 
 Route::prefix('client')->name('client.')->group(function () {
     Route::get('/san-pham', [ProductController::class, 'index'])->name('san-pham.index');
+    Route::get('/san-pham/{id}', [ProductController::class, 'product_detail'])->name('san-pham.detail');
+    Route::post('/san-pham/{id}/comment', [ProductController::class, 'product_comment'])->name('san-pham.comment');
+    Route::delete('/san-pham/{id}/{id_product}/comment', [ProductController::class, 'product_comment_destroy'])->name('san-pham.destroy');
     Route::get('/dat-ban', [ClientBookTableController::class, 'index'])->name('dat-ban.index');
     Route::get('/lien-he', [ContactController::class, 'index'])->name('lien-he.index');
 });
@@ -28,8 +32,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/store', [AdminHomeController::class, 'store'])->name('store');
         Route::get('/edit{id}', [AdminHomeController::class, 'edit'])->name('edit');
         Route::patch('update/{id}', [AdminHomeController::class, 'update'])->name('update');
+        Route::post('/post', [AdminHomeController::class, 'store'])->name('store');
         Route::delete('/{id}', [AdminHomeController::class, 'destroy'])->name('destroy');
-
+        Route::get('/search', [AdminHomeController::class, 'search'])->name('search');
     });
 
     // Table 
@@ -61,6 +66,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit{id}', [CategoryController::class, 'edit'])->name('edit');
         Route::patch('update/{id}', [CategoryController::class, 'update'])->name('update');
         Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+    });
+    Route::prefix('comment')->name('comment.')->group(function () {
+        Route::get('/', [CommentController::class, 'index'])->name('index');
+        Route::get('/detail/{id}', [CommentController::class, 'detail'])->name('detail');
+        Route::delete('/delete/{id}/{id_product}', [CommentController::class, 'destroy'])->name('destroy');
     });
 });
 
