@@ -11,6 +11,8 @@
                 Chủ</a>
             <a href="{{ route('client.san-pham.index') }}"
                 class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Thực Đơn</a>
+             <a href="{{ route('client.post') }}"
+                class="nav-item nav-link {{ request()->is('client/san-pham*') ? 'active' : '' }}">Bài viết</a>
             <a href="{{ route('client.lien-he.index') }}"
                 class="nav-item nav-link {{ request()->is('client/lien-he*') ? 'active' : '' }}">Liên Hệ</a>
             @if (Auth::check())
