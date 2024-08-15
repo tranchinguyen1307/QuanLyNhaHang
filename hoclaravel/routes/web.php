@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\EmployeesController as EmployeesHomeController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\MenuController as AdminHomeController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Client\ClientBookTableController;
 use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
@@ -41,7 +42,6 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::get('/edit{id}', [AdminHomeController::class, 'edit'])->name('edit');
         Route::patch('update/{id}', [AdminHomeController::class, 'update'])->name('update');
         Route::delete('/{id}', [AdminHomeController::class, 'destroy'])->name('destroy');
-
     });
 
     // Table
@@ -65,7 +65,6 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::post('/cap-nhat-trang-thai/{id}', [TableController::class, 'updateStatus'])->name('updateStatus');
         // xóa
         Route::delete('/xoa/{id}', [TableController::class, 'destroy'])->name('destroy');
-
     });
 
     //hoa don
@@ -73,9 +72,7 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         // Route cho trang chi tiết hóa đơn
         Route::get('/danh-sach-hoa-don', [InvoiceController::class, 'index'])->name('list');
         Route::post('/chi-tiet-hoa-don/{id}', [InvoiceController::class, 'updatePaymentStatus'])->name('show');
-        Route::post('/hoa-don-chi-tiet/{id}', [InvoiceController::class, 'showDetail'])->name('showDetail');
         Route::delete('/xoa/{id}', [InvoiceController::class, 'destroy'])->name('destroy');
-
     });
 
     // Employees
@@ -107,7 +104,15 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::patch('update/{id}', [CategoryController::class, 'update'])->name('update');
         Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('destroy');
     });
-
+    // Post
+    Route::prefix('post')->name('post.')->group(function () {
+        Route::get('/', [PostController::class, 'index'])->name('index');
+        Route::get('/create', [PostController::class, 'create'])->name('create');
+        Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
+        Route::patch('/update/{id}', [PostController::class, 'update'])->name('update');
+        Route::post('/store', [PostController::class, 'store'])->name('store');
+        Route::delete('/destroy/{id}', [PostController::class, 'destroy'])->name('destroy');
+    });
 });
 // dang nhap de dat bàn
 Route::middleware(['auth'])->group(function () {

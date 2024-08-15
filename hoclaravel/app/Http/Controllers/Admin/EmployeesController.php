@@ -17,7 +17,7 @@ class EmployeesController extends Controller
     public function index()
     {
 
-        $employees = Employee::orderBy('id', 'asc')->paginate(5);
+        $employees = Employee::orderBy('id', 'asc')->where('role_id','!=',1)->paginate(5);
         $roles = Role::all();
 
         return view('admin.Modules.Employees.employees', [
