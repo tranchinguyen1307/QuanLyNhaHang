@@ -1,7 +1,7 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
+    <strong>Quản lý nhà hàng T8</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
+        <b>Laravel</b>
         <b>Version</b> 3.2.0-rc
     </div>
 </footer>
@@ -47,7 +47,7 @@
 <!-- AdminLTE -->
 <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
 <script>
-    $(function() {
+    $(function () {
         // Summernote
         $('#summernote').summernote()
 
