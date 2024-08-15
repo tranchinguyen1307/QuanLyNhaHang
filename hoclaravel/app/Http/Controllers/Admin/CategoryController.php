@@ -29,9 +29,13 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $category = Category::find($id);
-        // $category = Category::orderBy('id')->get();
-        return view('admin.Modules.Category.edit-category', ['category'=>$category]);
+        $category = Category::find($id); 
+
+        if (!$category) {
+            return redirect()->route('admin.category.index')->with('error', 'Sản phẩm không tồn tại.'); 
+        }
+    
+        return view('admin.Modules.Category.edit-category', ['category' => $category]); 
     }
 
     public function update(Request $request, $id)
