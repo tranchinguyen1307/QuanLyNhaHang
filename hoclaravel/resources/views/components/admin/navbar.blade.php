@@ -10,7 +10,7 @@
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
-          <form class="form-inline">
+          <form class="form-inline" action="{{ route('admin.menu.search') }}" method="GET">
             <div class="input-group input-group-sm">
               <input class="form-control form-control-navbar" name="sreach" type="search" placeholder="Tìm kiếm" aria-label="Search">
               <div class="input-group-append">
