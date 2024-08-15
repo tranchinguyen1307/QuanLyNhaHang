@@ -33,6 +33,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('clients/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('clients/css/post.css') }}" rel="stylesheet">
     <title> @yield('title')</title>
 </head>
 

@@ -22,6 +22,13 @@
                   <label >Tên danh mục</label>
                   <input type="text" name="name" class="form-control"  placeholder="Nhập tên "  value="">
                 </div>
+                <div class="form-group">
+                  <label for="style">Loại</label>
+                  <select name="style" id="style" class="form-control">
+                      <option value="post" >Bài viết</option>
+                      <option value="menu" >Món ăn</option>
+                  </select>
+              </div>
                 </div>
               </div>
               <div class="card-footer">
