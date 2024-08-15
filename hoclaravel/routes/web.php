@@ -11,7 +11,7 @@ use App\Http\Controllers\Client\ClientBookTableController;
 use App\Http\Controllers\Client\ClientHomeController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\Admin\CategoryController;
+// use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdmin;
@@ -119,20 +119,6 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::get('/detail/{id}', [CommentController::class, 'detail'])->name('detail');
         Route::delete('/delete/{id}/{id_product}', [CommentController::class, 'destroy'])->name('destroy');
     });
-});
-
-
-
-// Middleware for authentication and verification
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/', function () {
-//         return view('client.pages.home');
-//     })->name('/trang-chu');
-// });
     // Post
     Route::prefix('post')->name('post.')->group(function () {
         Route::get('/', [PostController::class, 'index'])->name('index');
@@ -142,7 +128,13 @@ Route::prefix('admin')->middleware([CheckAdmin::class])->name('admin.')->group(f
         Route::post('/store', [PostController::class, 'store'])->name('store');
         Route::delete('/destroy/{id}', [PostController::class, 'destroy'])->name('destroy');
     });
+
 });
+
+
+
+
+
 // dang nhap de dat bàn
 Route::middleware(['auth'])->group(function () {
     Route::get('/client/dat-ban', [ClientBookTableController::class, 'index'])->name('client.dat-ban.index');

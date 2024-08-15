@@ -65,8 +65,6 @@ class MenuController extends Controller
         $product->description = $request->input('content');
         $product->price = $request->input('price');
         $product->created_at = $request->input('created_at');
-        $product->update_at = $request->input('update_at');
-        $product->updated_at = $request->input('updated_at');
         if ($request->file('image')) {
             if ($product->image) {
                 $oldImagePath = public_path('clients/img/' . $product->image);
